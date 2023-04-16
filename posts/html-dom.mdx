@@ -1,0 +1,31 @@
+---
+title: 'HTML, DOM 차이'
+description: '프론트엔드 필수 개념! HTML, DOM에 대해 이해하고 차이를 알아보자'
+date: 2022-04-20
+# update: 2022-04-20
+# tags:
+#   - HTML
+#   - DOM
+#   - TIL
+# series: "WEB"
+---
+
+## HTML이란
+
+- **HTML(**HyperText Markup Language)은 웹을 이루는 가장 기초적인 구성 요소로, 웹 콘텐츠의 의미와 구조를 정의할 때 사용한다.
+- HTML 이외의 다른 기술은 일반적으로 웹 페이지의 모양/표현 ([CSS](https://developer.mozilla.org/ko/docs/Web/CSS)), 또는 기능/동작 ([JavaScript](https://developer.mozilla.org/ko/docs/Web/JavaScript))을 설명하는 데 사용된다.
+
+## DOM이란
+
+- “**Document**(HTML)에 접근해서, **Object**(Javascript)처럼 HTML을 조작(Manipulation) 할 수 있는 **Model**”
+- DOM은 HTML과 스크립팅 언어(Javascript)를 서로 이어주는 역할
+- **즉, 우리가 js를 다룰 수 있으면, DOM을 활용해서 HTML을 조작할수 있다는 의미이다.**
+
+> **Virtual DOM?**
+> Virtual DOM(가상돔)을 사용하면 실제 DOM에 접근하여 조작하는 대신, 이를 추상화한 자바스크립트 객체를 구성하여 사용
+
+## HTML, DOM 차이
+
+- 브라우저는 HTML페이지를 로드하면서, ’HTML태그의 포함관계에 따라 DOM객체들을 트리구조’로 만든다. -> DOM트리
+- JS코드는 DOM트리를 따라, DOM객체들을 마음대로 접근할 수 있고 HTML 요소를 JS의 Object처럼 조작할 수 있다.
+- DOM을 다뤄 HTML을 단순한 문서에서 웹 앱으로 업그레이드 할 수 있다.
