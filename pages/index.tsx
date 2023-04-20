@@ -7,13 +7,9 @@ import RecentPosts from '@/components/RecentPosts';
 const Home = ({ posts }: InferGetStaticPropsType<typeof getStaticProps>) => {
 	return (
 		<Container>
-			<div className={`my-5 w-full`}>
-				<h1 className={`text-3xl font-extrabold italic`}>Hi, I&apos;m hyoon 👋🏻</h1>
-				<div className={``}>
-					<Image src={`/home.png`} alt="대표 이미지" width={300} height={300} className={``} />
-				</div>
-				<RecentPosts posts={posts} />
-			</div>
+			<h1 className="text-3xl font-extrabold italic">Hi, I&apos;m hyoon 👋🏻</h1>
+			<Image src={`/home.png`} alt="대표 이미지" width={300} height={300} />
+			<RecentPosts posts={posts} />
 		</Container>
 	);
 };

@@ -14,10 +14,10 @@ const Post = ({ post }: InferGetStaticPropsType<typeof getStaticProps>) => {
 
 	return (
 		<Container customMeta={customMeta}>
-			<div className={`mt-10 prose`}>
-				<h1 className={`my-3`}>{post?.title}</h1>
-				<h2 className={`font-medium text-gray-500 text-lg my-3`}>{post?.description}</h2>
-				<p className={`font-light text-s text-gray-400`}>{post?.date}</p>
+			<div className="mt-10 prose">
+				<h1 className="my-3">{post?.title}</h1>
+				<h2 className="font-medium text-gray-500 text-lg my-3">{post?.description}</h2>
+				<p className="font-light text-s text-gray-400">{post?.date}</p>
 				<MDXComponent />
 			</div>
 		</Container>

@@ -6,7 +6,9 @@ import Container from '@/components/Container';
 const Blog = ({ posts }: InferGetStaticPropsType<typeof getStaticProps>) => {
 	return (
 		<Container>
-			<div className={`mt-10 flex flex-col`}>
+			<h1 className="text-3xl font-extrabold">Post</h1>
+
+			<div className="mt-10 flex flex-col">
 				{posts.map((post) => (
 					<BlogPost
 						date={post.date}
