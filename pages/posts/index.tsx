@@ -1,16 +1,16 @@
 import { InferGetStaticPropsType } from 'next';
 import { allPosts } from 'contentlayer/generated';
-import BlogPost from '@/components/BlogPost';
+import Post from '@/components/Post';
 import Container from '@/components/Container';
+import Title from '@/components/Title';
 
-const Blog = ({ posts }: InferGetStaticPropsType<typeof getStaticProps>) => {
+const Posts = ({ posts }: InferGetStaticPropsType<typeof getStaticProps>) => {
 	return (
 		<Container>
-			<h1 className="text-3xl font-extrabold">Post</h1>
-
-			<div className="mt-10 flex flex-col">
+			<Title main="✍🏻 Posts" description="배우고 알게된 것들을 기록합니다." />
+			<div className="flex flex-col">
 				{posts.map((post) => (
-					<BlogPost
+					<Post
 						date={post.date}
 						title={post.title}
 						des={post.description}
@@ -33,4 +33,4 @@ export const getStaticProps = async () => {
 	};
 };
 
-export default Blog;
+export default Posts;
