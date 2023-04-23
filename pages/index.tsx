@@ -1,14 +1,14 @@
 import { InferGetStaticPropsType } from 'next';
-import Image from 'next/image';
 import { allPosts } from 'contentlayer/generated';
 import Container from '@/components/Container';
-import RecentPosts from '@/components/posts/RecentPosts';
+import Intro from '@/components/home/Intro';
+import RecentPosts from '@/components/home/RecentPosts';
 
 const Home = ({ posts }: InferGetStaticPropsType<typeof getStaticProps>) => {
 	return (
 		<Container>
 			<h1 className="text-3xl italic font-extrabold">Hi, I&apos;m hyoon 👋🏻</h1>
-			<Image src={`/home.png`} alt="대표 이미지" width={300} height={300} />
+			<Intro />
 			<RecentPosts posts={posts} />
 		</Container>
 	);

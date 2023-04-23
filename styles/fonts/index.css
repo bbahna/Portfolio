@@ -112,7 +112,8 @@ html {
 }
 
 h1,
-h2 {
+h2,
+h3 {
 	font-family: 'SCDream', system-ui, sans-serif;
 	color: #111;
 }
