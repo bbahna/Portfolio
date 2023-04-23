@@ -105,15 +105,3 @@
 	font-weight: 900;
 	src: url('./SUIT/SUIT-Heavy.otf') format('opentype');
 }
-
-html {
-	font-family: 'SUIT', system-ui, sans-serif;
-	color: #333;
-}
-
-h1,
-h2,
-h3 {
-	font-family: 'SCDream', system-ui, sans-serif;
-	color: #111;
-}

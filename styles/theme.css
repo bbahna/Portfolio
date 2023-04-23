@@ -1,0 +1,84 @@
+/* 배경 색 */
+.theme-bg-0 {
+	@apply bg-white dark:bg-zinc-900;
+}
+
+.theme-bg-1 {
+	@apply bg-slate-50 dark:bg-zinc-800;
+}
+
+.theme-bg-2 {
+	@apply bg-slate-100 dark:bg-zinc-700 hover:bg-slate-200 dark:hover:bg-zinc-600;
+}
+
+.theme-bg-main {
+	@apply bg-teal-500 dark:bg-amber-400;
+}
+
+/* 글자 색 */
+.theme-text-0 {
+	@apply text-zinc-950 dark:text-zinc-50;
+}
+
+.theme-text-1 {
+	@apply text-zinc-900 dark:text-zinc-100;
+}
+
+.theme-text-2 {
+	@apply text-zinc-800 dark:text-zinc-200;
+}
+
+.theme-text-3 {
+	@apply text-zinc-700 dark:text-zinc-400;
+}
+
+.theme-text-4 {
+	@apply text-zinc-600 dark:text-zinc-300;
+}
+
+.theme-text-5 {
+	@apply text-zinc-400 dark:text-zinc-500;
+}
+
+.theme-text-main {
+	@apply text-teal-400 dark:text-amber-500;
+}
+
+.theme-text-hover {
+	@apply hover:text-teal-500 dark:hover:text-amber-400;
+}
+
+/* 아이콘 색 */
+.theme-fill-black {
+	@apply fill-zinc-900 dark:fill-zinc-100;
+}
+
+.theme-fill-white {
+	@apply fill-slate-300 dark:fill-zinc-500;
+}
+
+.theme-icon-main {
+	@apply text-[#68aca7] dark:text-[#ffb65c] fill-[#cdd9d8] dark:fill-[#e8deca] hover:fill-[#68aca7] dark:hover:fill-[#ffb65c];
+}
+
+/* 그림자 색 */
+.theme-header-shadow {
+	@apply shadow-[0_5px_7px_0px_#eee] dark:shadow-[0_5px_7px_0px_#333];
+}
+
+/* 보더 색 */
+.theme-border {
+	@apply border-stone-300 dark:border-stone-700;
+}
+
+.theme-border-hover {
+	@apply hover:border-stone-400 dark:hover:border-stone-600;
+}
+
+.theme-border-focus {
+	@apply focus:border-teal-500 dark:focus:border-amber-500;
+}
+
+.theme-border-y {
+	@apply border-y-stone-300 dark:border-y-stone-700;
+}
