@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import Head from 'next/head';
 import metadata from '@/data/metadata';
 import Navigation from './Navigation';
+import Footer from './Footer';
 
 const Container = (props: any) => {
 	const [show, setShow] = useState(false);
@@ -36,6 +37,7 @@ const Container = (props: any) => {
 			</Head>
 			<Navigation />
 			<main className="flex-1 w-full max-w-screen-lg p-3">{props.children}</main>
+			<Footer />
 			<div className="fixed right-8 bottom-8">
 				<button
 					aria-label="Scroll To Top"
