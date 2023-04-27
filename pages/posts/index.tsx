@@ -26,6 +26,7 @@ const Posts = ({ posts }: InferGetStaticPropsType<typeof getStaticProps>) => {
 							title={post.title}
 							des={post.description}
 							slug={post._raw.flattenedPath}
+							thumbnail={post.thumbnail}
 							key={post._id}
 						/>
 					))}
