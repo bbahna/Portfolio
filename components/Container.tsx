@@ -29,7 +29,7 @@ const Container = (props: any) => {
 	};
 
 	return (
-		<div className="flex flex-col items-center w-full min-h-screen theme-bg-0">
+		<div className="flex flex-col items-center w-full min-h-screen theme-bg-0 pt-[60px]">
 			<Head>
 				<title>{meta.title}</title>
 				<meta content={meta.description} name="description" />

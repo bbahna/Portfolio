@@ -11,6 +11,10 @@
 	@apply bg-slate-100 dark:bg-zinc-700 hover:bg-slate-200 dark:hover:bg-zinc-600;
 }
 
+.theme-bg-black {
+	@apply bg-zinc-900 dark:bg-white;
+}
+
 .theme-bg-main {
 	@apply bg-teal-500 dark:bg-amber-400;
 }
