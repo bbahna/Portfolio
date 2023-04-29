@@ -7,7 +7,7 @@ interface IPostProps {
 const Search = ({ onChange }: IPostProps) => {
 	return (
 		<>
-			<div className="relative flex flex-row items-center">
+			<div className="relative flex flex-row items-center mb-4">
 				<svg
 					xmlns="http://www.w3.org/2000/svg"
 					fill="none"
