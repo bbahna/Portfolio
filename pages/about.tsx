@@ -6,9 +6,9 @@ const About = () => {
 	return (
 		<Container>
 			<Title main="🙋🏻‍♀️ About" description="매력적인 사용자 경험을 추구합니다." />
-			<div className="flex items-center justify-center max-md:px-3 max-md:flex-col">
+			<div className="flex items-center justify-center max-lg:px-3 max-lg:flex-col">
 				<Image src={`/home.png`} alt="소개 이미지" width={300} height={300} />
-				<p className="font-light max-md:mt-5">
+				<p className="font-light max-lg:mt-5">
 					안녕하세요. <span className="font-normal theme-text-main">아이디어를 현실화하는</span>{' '}
 					<span className="font-medium">프론트엔드 개발자</span> 윤효정입니다.
 					<br />

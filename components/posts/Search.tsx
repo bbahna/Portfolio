@@ -7,14 +7,14 @@ interface IPostProps {
 const Search = ({ onChange }: IPostProps) => {
 	return (
 		<>
-			<div className="flex flex-row relative items-center">
+			<div className="relative flex flex-row items-center">
 				<svg
 					xmlns="http://www.w3.org/2000/svg"
 					fill="none"
 					viewBox="0 0 24 24"
 					strokeWidth={1.2}
 					stroke="currentColor"
-					className="w-5 h-5 absolute left-6"
+					className="absolute w-5 h-5 left-6"
 				>
 					<path
 						strokeLinecap="round"
@@ -24,7 +24,7 @@ const Search = ({ onChange }: IPostProps) => {
 				</svg>
 				<input
 					type="text"
-					className="flex-1 mx-1 pl-12 pr-3 py-2 rounded-3xl theme-text-main bg-transparent outline-none appearance-none border theme-border theme-border-hover theme-border-focus duration-75"
+					className="flex-1 py-2 pl-12 pr-3 mx-1 duration-75 bg-transparent border outline-none appearance-none rounded-3xl theme-text-main theme-border theme-border-hover theme-border-focus"
 					onChange={onChange}
 					placeholder="검색하기"
 				/>
