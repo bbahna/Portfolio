@@ -54,6 +54,21 @@ const Container = (props: any) => {
 					</svg>
 				</button>
 			</div>
+			<style jsx>
+				{`
+					main {
+						animation: fadein 1.5s;
+					}
+					@keyframes fadein {
+						0% {
+							opacity: 0;
+						}
+						100% {
+							opacity: 1;
+						}
+					}
+				`}
+			</style>
 		</div>
 	);
 };
