@@ -10,16 +10,21 @@ const MobileMenu = () => {
 	const toggleOnClick = () => setOnClick(!onClick);
 
 	return (
-		<div className="flex flex-wrap content-center justify-center mr-3 lg:hidden">
-			<div className={`block relative cursor-pointer z-20 w-[28px] h-[20px] p-2`} onClick={toggleOnClick}>
-				<div className={`${onClick && 'top'} top-0 soild theme-bg-black`} />
-				<div className={`${onClick && 'hidden'} top-2 soild theme-bg-black`} />
-				<div className={`${onClick && 'bottom'} bottom-0 soild theme-bg-black`} />
+		<div className="flex content-center justify-center mr-3 lg:hidden">
+			<div
+				className="cursor-pointer z-20 rounded-lg theme-bg-hover-2 duration-200 w-[47px] h-[45px] flex items-center justify-center"
+				onClick={toggleOnClick}
+			>
+				<div className={`relative blodck w-[28px] h-[20px]`}>
+					<div className={`${onClick && 'top'} top-0 soild theme-bg-black`} />
+					<div className={`${onClick && 'hidden'} top-2 soild theme-bg-black`} />
+					<div className={`${onClick && 'bottom'} bottom-0 soild theme-bg-black`} />
+				</div>
 			</div>
 			<div
 				className={`${
 					onClick && 'sideBar'
-				} translate-x-full translate-y-0 z-10 fixed top-0 bottom-0 right-0 w-full ease duration-300 rotate-0`}
+				} translate-x-full translate-y-0 z-10 fixed top-0 bottom-0 right-0 w-full ease duration-300 rotate-0 theme-bg-0`}
 			>
 				<div className="p-2">
 					<Link href="/">

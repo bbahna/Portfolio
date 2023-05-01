@@ -10,7 +10,14 @@
 html,
 div {
 	font-family: 'SUIT', system-ui, sans-serif;
-	@apply bg-white dark:bg-zinc-900 text-zinc-800 dark:text-zinc-100;
+}
+
+html {
+	@apply bg-white dark:bg-zinc-900 text-zinc-800 dark:text-zinc-200;
+}
+
+div {
+	@apply text-zinc-800 dark:text-zinc-200;
 }
 
 h1,

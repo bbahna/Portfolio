@@ -11,12 +11,24 @@
 	@apply bg-slate-100 dark:bg-zinc-700 hover:bg-slate-200 dark:hover:bg-zinc-600;
 }
 
+.theme-bg-3 {
+	@apply bg-zinc-200 dark:bg-zinc-700;
+}
+
 .theme-bg-black {
 	@apply bg-zinc-900 dark:bg-white;
 }
 
 .theme-bg-main {
-	@apply bg-teal-500 dark:bg-amber-400;
+	@apply bg-teal-500 dark:bg-emerald-400;
+}
+
+.theme-bg-hover {
+	@apply hover:bg-slate-50 dark:hover:bg-zinc-800;
+}
+
+.theme-bg-hover-2 {
+	@apply hover:bg-zinc-100 dark:hover:bg-zinc-800;
 }
 
 /* 글자 색 */
@@ -44,12 +56,16 @@
 	@apply text-zinc-400 dark:text-zinc-500;
 }
 
+.theme-text-dark {
+	@apply text-zinc-100 dark:text-zinc-900;
+}
+
 .theme-text-main {
-	@apply text-teal-400 dark:text-amber-500;
+	@apply text-teal-400 dark:text-emerald-500;
 }
 
 .theme-text-hover {
-	@apply hover:text-teal-500 dark:hover:text-amber-400;
+	@apply hover:text-teal-500 dark:hover:text-emerald-400;
 }
 
 /* 아이콘 색 */
@@ -62,7 +78,7 @@
 }
 
 .theme-icon-main {
-	@apply text-[#68aca7] dark:text-[#ffb65c] fill-[#cdd9d8] dark:fill-[#e8deca] hover:fill-[#68aca7] dark:hover:fill-[#ffb65c];
+	@apply text-[#68aca7] dark:text-[#cdd9d8] fill-[#cdd9d8] hover:fill-[#68aca7] dark:hover:fill-emerald-200;
 }
 
 /* 그림자 색 */
@@ -75,12 +91,20 @@
 	@apply border-stone-300 dark:border-stone-700;
 }
 
+.theme-border-light {
+	@apply border-slate-300 dark:border-neutral-700;
+}
+
 .theme-border-hover {
 	@apply hover:border-stone-400 dark:hover:border-stone-600;
 }
 
+.theme-border-hover-light {
+	@apply hover:border-slate-400 dark:hover:border-neutral-600;
+}
+
 .theme-border-focus {
-	@apply focus:border-teal-500 dark:focus:border-amber-500;
+	@apply focus:border-teal-500 dark:focus:border-emerald-500;
 }
 
 .theme-border-y {
