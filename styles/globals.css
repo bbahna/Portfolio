@@ -16,8 +16,18 @@ div {
 h1,
 h2,
 h3,
-p {
+p,
+a,
+strong,
+code {
 	@apply text-zinc-800 dark:text-zinc-100;
+}
+
+h1,
+h2,
+h3,
+a {
+	font-family: 'SCDream', system-ui, sans-serif;
 }
 
 &::-webkit-scrollbar {
