@@ -7,7 +7,7 @@ const Notfound = () => {
 		<Container>
 			<Title main="🚫 404" description="어쩌다 여기까지 오셨나요." />
 			<Link href="/">
-				<div className="block p-2 text-sm border rounded-md border-slate-300 hover:border-slate-400 hover:bg-slate-50">
+				<div className="block p-2 text-sm border rounded-md theme-border-light theme-border-hover-light theme-bg-hover">
 					홈으로 가기
 				</div>
 			</Link>

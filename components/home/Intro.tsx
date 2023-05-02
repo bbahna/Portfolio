@@ -3,8 +3,8 @@ import Link from 'next/link';
 
 const Intro = () => {
 	return (
-		<div className="flex items-center justify-center max-lg:px-3 max-lg:flex-col">
-			<Image src={`/hello.png`} alt="메인 이미지" width={300} height={300} />
+		<div className="flex items-center justify-between lg:px-5 max-lg:px-2 max-lg:flex-col">
+			<Image src={`/idea.png`} alt="메인 이미지" width={280} height={280} />
 			<div className="lg:ml-7 mt-7">
 				<h2 className="mb-3 text-xl">
 					안녕하세요.{` `}
@@ -17,12 +17,12 @@ const Intro = () => {
 				</h3>
 				<div className="flex justify-between">
 					<Link href="/about">
-						<div className="p-2 font-light transition-transform theme-icon-main hover:scale-110 ">→ More</div>
+						<div className="p-2 font-light transition-transform theme-icon-main hover:scale-110 ">→ About</div>
 					</Link>
 					<div className="flex mt-3">
 						<a
 							href="mailto:hyoon.dev@gmail.com"
-							className="mx-5 transition-transform duration-500 hover:scale-110 theme-icon-main"
+							className="mr-5 transition-transform duration-500 hover:scale-110 theme-icon-main"
 						>
 							<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
 								<path d="M12 .02c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm6.99 6.98l-6.99 5.666-6.991-5.666h13.981zm.01 10h-14v-8.505l7 5.673 7-5.672v8.504z" />
