@@ -1,6 +1,6 @@
 ## next.js Portfolio project
 
-> 2023.4 ~ 진행 중
+> 2023.4 ~ 5(1차 완료)
 
 ### 초기 설정
 
@@ -18,34 +18,52 @@
 
 `$ npm run dev`
 
-### **🎨** Design Theme
+### [🎨 Design Theme](https://github.com/bbahna/Portfolio/issues/1)
 
 - logo
 - font
-- color - Primary, Secondary, Grey, Error, Warning, Info, Sucess
+- color
 
-### +storybook 추가
+### [📦 Package 추가](https://github.com/bbahna/Portfolio/issues/4)
 
-### **🗃️** Layout 설정
+- tailwind plugin
+- contentlayer
 
-### **📄** UI 작업
+### [🗃️ Layout 설정](https://github.com/bbahna/Portfolio/issues/2)
 
-- home: onboarding → about, skill, project, blog, resume, contact / about, new post
-- about: resume, skill
-- blog: all, tag, series, serach, detail
-- project: gatsby, guestBook, (todoList, board), +commerce
-- +contact: mail, form?
-- 404
+- navigation
+- footer
+- top buttom
 
-### ⚡ 기능(feature)
+### [📄 UI 작업](https://github.com/bbahna/Portfolio/issues/3)
 
-- all - responsive, dark mode
-- layout - serach, top buttom
-- blog - comment
-- tag
-- +news letter
+- home
+  - about, new post
+- 🙋🏻‍♀️ about
+- ✍🏻 posts
+  - all
+  - search
+  - detail
+- 🗂️ project
+  - beside, protfolio, guestBook, gatsby
+- 🚫 404
+  - page
 
-### 🚀 배포(deploy)
+### [🖌️ 효과(animation)](https://github.com/bbahna/Portfolio/issues/7)
 
-- gh-pages
+- [all] 처음 로딩 시, 효과
+- [posts] hover 효과
+
+### [⚡ 기능(feature)](https://github.com/bbahna/Portfolio/issues/5)
+
+- all
+  - responsive
+  - dark mode
+- posts
+  - comment
+  - search
+  - thumb nail
+
+### [🚀 배포(deploy)](https://www.hyoon.dev/)
+
 - vercel
