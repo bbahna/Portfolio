@@ -38,7 +38,7 @@ const Navigation = () => {
 			<div className="flex flex-row items-center justify-between max-w-screen-lg m-auto">
 				<div className="flex flex-row items-center duration-200 rounded-lg theme-bg-hover-2">
 					<Link href="/">
-						<Image src={`/logoIcon.png`} alt="로고" width={45} height={45} />
+						<Image src={`/logo.png`} alt="로고" width={45} height={45} />
 					</Link>
 				</div>
 				<nav className="flex justify-center">

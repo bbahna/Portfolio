@@ -28,7 +28,7 @@ const project: {
 		link: 'https://hyoon-share.notion.site/Next-Portfolio-web-site-b7621739363b4bc4b9aaca6677cfc6d5',
 		description: 'Next로 제작한 개인 포트폴리오 웹 사이트',
 		image: '/project/project_2.png',
-		date: '2023.4',
+		date: '2023.4 ~ 2023.5(1차 완료)',
 		hashtag: ['개인', '포트폴리오', '다크모드', '반응형'],
 	},
 	{
