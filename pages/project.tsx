@@ -7,9 +7,19 @@ const Project = () => {
 	return (
 		<Container>
 			<Title main="🗂️ Project" description="뚝딱뚝딱 프로젝트 공장입니다." />
-			<div className="flex flex-wrap">
+			<div className="flex flex-wrap max-lg:max-w-[664px] max-md:content-center mx-auto my-0 max-md:flex-col">
 				{project.map((post) => (
-					<ProjectList title={post.title} des={post.description} link={post.link} key={post.id} />
+					<ProjectList
+						key={post.id}
+						title={post.title}
+						stack={post.stack}
+						status={post.status}
+						link={post.link}
+						description={post.description}
+						image={post.image}
+						date={post.date}
+						hashtag={post.hashtag}
+					/>
 				))}
 			</div>
 		</Container>
