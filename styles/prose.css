@@ -1,0 +1,30 @@
+.prose {
+	@apply px-2;
+}
+.prose h2 {
+	@apply mb-3 font-semibold;
+}
+
+.prose h3 {
+	@apply mb-3 text-xl font-medium;
+}
+
+.prose li::marker {
+	@apply text-slate-300 dark:text-gray-600;
+}
+
+.prose blockquote {
+	@apply border-l-slate-200 dark:border-l-gray-700;
+}
+
+.prose a {
+	@apply text-indigo-800 duration-100 hover:text-indigo-600 dark:text-slate-400 dark:hover:text-slate-500;
+}
+
+.prose aside {
+	@apply p-4 my-2 rounded-md bg-slate-100 dark:bg-zinc-800;
+}
+
+.prose code {
+	@apply px-[7px] py-[3px] m-2 text-[13px] font-medium leading-7 rounded-md before:content-none after:content-none bg-[#eee] dark:bg-zinc-800 text-red-500;
+}

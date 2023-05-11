@@ -1,8 +1,8 @@
 import { InferGetStaticPropsType } from 'next';
 import { useMDXComponent } from 'next-contentlayer/hooks';
 import { allPosts } from 'contentlayer/generated';
-import Container from 'components/Container';
-import Utterances from 'components/posts/Utterances';
+import Container from '@/components/Layout/Container';
+import Utterances from '@/components/posts/Utterances';
 
 const Post = ({ post }: InferGetStaticPropsType<typeof getStaticProps>) => {
 	const MDXComponent = useMDXComponent(post!.body.code);
@@ -15,10 +15,12 @@ const Post = ({ post }: InferGetStaticPropsType<typeof getStaticProps>) => {
 
 	return (
 		<Container customMeta={customMeta}>
-			<div className="max-w-3xl mx-auto my-10 prose">
-				<h1 className="my-3">{post?.title}</h1>
-				<h2 className="my-3 text-lg font-medium text-gray-500">{post?.description}</h2>
-				<p className="font-light text-gray-400 text-s">{post?.date}</p>
+			<div className="max-w-3xl mx-auto my-12 prose">
+				<div className="flex flex-col items-center border-b mb-7 pb-7 theme-border-light">
+					<h1 className="mb-3 font-bold max-lg:text-[34px]">{post?.title}</h1>
+					<p className="mt-0 mb-3 text-lg font-normal max-lg:text-base theme-text-3">{post?.description}</p>
+					<span className="m-0 text-sm font-medium theme-text-5">{post?.date}</span>
+				</div>
 				<MDXComponent />
 			</div>
 			<Utterances />
