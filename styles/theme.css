@@ -23,6 +23,10 @@
 	@apply bg-teal-500 dark:bg-emerald-400;
 }
 
+.theme-bg-main-light {
+	@apply bg-teal-400 dark:bg-emerald-600;
+}
+
 .theme-bg-hover {
 	@apply hover:bg-slate-50 dark:hover:bg-zinc-800;
 }
@@ -92,7 +96,7 @@
 }
 
 .theme-border-light {
-	@apply border-slate-300 dark:border-neutral-700;
+	@apply border-slate-200 dark:border-neutral-700;
 }
 
 .theme-border-hover {
