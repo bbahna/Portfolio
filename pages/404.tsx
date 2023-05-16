@@ -1,6 +1,6 @@
 import Link from 'next/link';
-import Container from '@/components/Container';
-import Title from '@/components/Title';
+import Container from '@/components/layout/Container';
+import Title from '@/components/common/Title';
 
 const Notfound = () => {
 	return (

@@ -1,5 +1,5 @@
-import Container from '@/components/Container';
-import Title from '@/components/Title';
+import Container from '@/components/layout/Container';
+import Title from '@/components/common/Title';
 import project from '@/data/project';
 import ProjectList from '@/components/project/ProjectList';
 

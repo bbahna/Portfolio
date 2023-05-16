@@ -1,6 +1,6 @@
 import Image from 'next/image';
-import Container from '@/components/Container';
-import Title from '@/components/Title';
+import Container from '@/components/layout/Container';
+import Title from '@/components/common/Title';
 
 const About = () => {
 	return (

@@ -1,10 +1,13 @@
 import { useEffect, useState } from 'react';
 import Head from 'next/head';
+import { useRouter } from 'next/router';
 import metadata from '@/data/metadata';
+import navlinks from '@/data/navlinks';
 import Navigation from './Navigation';
 import Footer from './Footer';
 
 const Container = (props: any) => {
+	const router = useRouter();
 	const [show, setShow] = useState(false);
 
 	useEffect(() => {
@@ -31,7 +34,10 @@ const Container = (props: any) => {
 	return (
 		<div className="flex flex-col items-center w-full min-h-screen theme-bg-0 pt-[60px]">
 			<Head>
-				<title>{meta.title}</title>
+				<title>
+					{meta.title}
+					{/* {meta.title} | {navlinks.find((f) => f.link == router.pathname)?.title} */}
+				</title>
 				<meta content={meta.description} name="description" />
 				<meta property="og:site_name" content={meta.author} />
 			</Head>

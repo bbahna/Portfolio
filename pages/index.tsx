@@ -1,6 +1,6 @@
 import { InferGetStaticPropsType } from 'next';
 import { allPosts } from 'contentlayer/generated';
-import Container from '@/components/Container';
+import Container from '@/components/layout/Container';
 import Intro from '@/components/home/Intro';
 import RecentPosts from '@/components/home/RecentPosts';
 
