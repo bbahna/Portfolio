@@ -11,15 +11,15 @@ const Intro = () => {
 					<span className="font-medium">프론트엔드 개발자</span> 윤효정입니다.
 					<br />
 				</h2>
-				<h3 className="mb-2 text-base ">
+				<h3 className="mb-4 text-base ">
 					사람과 사회가 행복해지는 좋은 프로그램을 통해{' '}
 					<span className="font-normal theme-text-main">선한 영향력을 끼치고</span> 싶습니다.
 				</h3>
-				<div className="flex justify-between">
-					<Link href="/about">
-						<div className="p-2 font-light transition-transform theme-icon-main hover:scale-110 ">→ About</div>
+				<div className="flex items-center justify-between">
+					<Link href="https://hyoon-share.notion.site/hyoon-e669d80400f64128b536582b0af7756a">
+						<div className="font-light transition-transform theme-icon-main hover:scale-110">→ Resume</div>
 					</Link>
-					<div className="flex mt-3">
+					<div className="flex">
 						<a
 							href="mailto:hyoon.dev@gmail.com"
 							className="mr-5 transition-transform duration-500 hover:scale-110 theme-icon-main"
