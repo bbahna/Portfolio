@@ -24,11 +24,6 @@
 - font
 - color
 
-### [📦 Package 추가](https://github.com/bbahna/Portfolio/issues/4)
-
-- tailwind plugin
-- contentlayer
-
 ### [🗃️ Layout 설정](https://github.com/bbahna/Portfolio/issues/2)
 
 - navigation
@@ -42,27 +37,36 @@
 - 🙋🏻‍♀️ about
 - ✍🏻 posts
   - all
-  - search
   - detail
 - 🗂️ project
   - beside, protfolio, guestBook, gatsby
 - 🚫 404
   - page
 
-### [🖌️ 효과(animation)](https://github.com/bbahna/Portfolio/issues/7)
+### [📦 Package 추가](https://github.com/bbahna/Portfolio/issues/4)
 
-- [all] 처음 로딩 시, 효과
-- [posts] hover 효과
+- tailwind plugin
+- contentlayer
+- code block
+- +storybook
 
 ### [⚡ 기능(feature)](https://github.com/bbahna/Portfolio/issues/5)
 
 - all
   - responsive
   - dark mode
+  - share url
 - posts
   - comment
   - search
   - thumb nail
+  - link copy
+  - categaory
+
+### [🖌️ 효과(animation)](https://github.com/bbahna/Portfolio/issues/7)
+
+- [all] 처음 로딩 시, 효과
+- [posts] hover 효과
 
 ### [🚀 배포(deploy)](https://www.hyoon.dev/)
 
