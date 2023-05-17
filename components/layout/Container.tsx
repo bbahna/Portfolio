@@ -32,7 +32,7 @@ const Container = (props: any) => {
 	};
 
 	return (
-		<div className="flex flex-col items-center w-full min-h-screen theme-bg-0 pt-[60px]">
+		<div className="flex flex-col items-center w-screen min-h-screen theme-bg-0 pt-[60px]">
 			<Head>
 				<title>
 					{meta.title}
@@ -43,6 +43,7 @@ const Container = (props: any) => {
 				<meta property="og:type" content="website" />
 				<meta property="og:url" content="https://www.hyoon.dev/" />
 				<meta property="og:image" content="https://www.hyoon.dev/og_image.png" />
+				<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
 			</Head>
 			<Navigation />
 			<main className="flex-1 w-full max-w-screen-lg p-3">{props.children}</main>

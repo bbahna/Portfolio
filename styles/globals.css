@@ -49,3 +49,9 @@ h3 {
 	background-color: #eee;
 	border-radius: 10px;
 }
+
+@supports (font: -apple-system-body) and (-webkit-appearance: none) {
+	img[loading='lazy'] {
+		clip-path: inset(0.6px);
+	}
+}
