@@ -38,8 +38,11 @@ const Container = (props: any) => {
 					{meta.title}
 					{/* {meta.title} | {navlinks.find((f) => f.link == router.pathname)?.title} */}
 				</title>
-				<meta content={meta.description} name="description" />
+				<meta property="og:description" content={meta.description} name="description" />
 				<meta property="og:site_name" content={meta.author} />
+				<meta property="og:type" content="website" />
+				<meta property="og:url" content="https://www.hyoon.dev/" />
+				<meta property="og:image" content="https://www.hyoon.dev/share.png" />
 			</Head>
 			<Navigation />
 			<main className="flex-1 w-full max-w-screen-lg p-3">{props.children}</main>
