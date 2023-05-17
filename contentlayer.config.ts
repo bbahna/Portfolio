@@ -7,9 +7,11 @@ export const Post = defineDocumentType(() => ({
 	filePathPattern: `**/*.mdx`,
 	fields: {
 		title: { type: 'string', required: true },
-		date: { type: 'string', required: true },
-		thumbnail: { type: 'string', required: false },
+		category: { type: 'string', required: true },
 		description: { type: 'string', required: true },
+		thumbnail: { type: 'string', required: false },
+		date: { type: 'string', required: true },
+		// tags: { type: 'json', required: false },
 	},
 }));
 

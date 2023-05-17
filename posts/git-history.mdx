@@ -2,12 +2,8 @@
 title: '[Git] commit history 초기화'
 description: '커밋 내역을 전부 삭제하고 원격 저장소를 연결해서 푸시하는 방법!'
 date: 2022-06-10
-# update: 2022-06-10
-# tags:
-#   - git
-#   - commit
-#   - history
-# series: "Git"
+tags: ['git', 'commit', 'history']
+category: 'Git'
 ---
 
 ## git commit history 전부 삭제하기
@@ -18,32 +14,32 @@ date: 2022-06-10
 
 ### 1. commit history 삭제
 
-```
+```bash
 $ rm -rf .git
 ```
 
 ### 2. git 재설정
 
-```
+```bash
 $ git init
 ```
 
 ### 3. git 커밋
 
-```
+```bash
 $ git add .
 $ git commit -m "initial commit"
 ```
 
 ### 4. git 원격 저장소 연결
 
-```
+```bash
 $ git remote add origin [저장소 URL]
 ```
 
 ### 5. git 원격 저장소 푸시 _(force: 기존 자료로 발생하는 에러를 무시한 강한 규칙 적용)_
 
-```
+```bash
 $ git push -u --force origin master
 ```
 

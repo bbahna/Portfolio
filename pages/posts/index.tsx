@@ -1,35 +1,52 @@
 import { ChangeEvent, useState } from 'react';
 import { InferGetStaticPropsType } from 'next';
 import { allPosts } from 'contentlayer/generated';
-import Post from '@/components/posts/PostList';
-import Container from '@/components/Container';
-import Title from '@/components/Title';
+import Container from '@/components/layout/Container';
+import Title from '@/components/common/Title';
 import Search from '@/components/posts/Search';
+import BoxList from '@/components/common/BoxList';
+import CategoryList from '@/components/posts/CategoryList';
 
 const Posts = ({ posts }: InferGetStaticPropsType<typeof getStaticProps>) => {
 	const [search, setSearch] = useState<string>('');
+	const [click, setClick] = useState<boolean>(false);
+	const [sellect, setSellect] = useState<string>('all');
 
 	const handleSearch = (e: ChangeEvent<HTMLInputElement>) => {
+		setSellect('');
 		setSearch(e.target.value.toLowerCase());
+	};
+
+	const clickSearch = () => {
+		setClick(!click);
+		click ? setSellect('all') : setSellect('');
 	};
 
 	return (
 		<Container>
 			<Title main="✍🏻 Posts" description="배우고 알게된 것들을 기록합니다." />
-			<Search onChange={handleSearch} />
-			<div className="flex flex-col">
-				{posts
-					.filter((post) => post.title.toLowerCase().includes(search))
-					.map((post) => (
-						<Post
-							date={post.date}
-							title={post.title}
-							des={post.description}
-							slug={post._raw.flattenedPath}
-							thumbnail={post.thumbnail}
-							key={post._id}
-						/>
-					))}
+			<div className="flex items-start justify-between m-3">
+				<CategoryList sellect={sellect} setSellect={setSellect} setClick={setClick} />
+				<Search click={click} onChange={handleSearch} onClick={clickSearch} />
+			</div>
+			<div className="mb-5 flex flex-wrap max-lg:max-w-[664px] max-md:content-center mx-auto my-0 max-md:flex-col">
+				{click ? (
+					<>
+						{posts
+							.filter((post) => post.title.toLowerCase().includes(search))
+							.map((post) => (
+								<BoxList post={post} key={post._id} />
+							))}
+					</>
+				) : (
+					<>
+						{sellect === 'all'
+							? posts.map((post) => <BoxList post={post} key={post._id} />)
+							: posts
+									.filter((post: any) => post.category === sellect)
+									.map((post) => <BoxList post={post} key={post._id} />)}
+					</>
+				)}
 			</div>
 		</Container>
 	);

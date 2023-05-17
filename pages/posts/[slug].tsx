@@ -1,7 +1,7 @@
 import { InferGetStaticPropsType } from 'next';
 import { useMDXComponent } from 'next-contentlayer/hooks';
 import { allPosts } from 'contentlayer/generated';
-import Container from '@/components/Layout/Container';
+import Container from '@/components/layout/Container';
 import Utterances from '@/components/posts/Utterances';
 import CopyLinkBtn from '@/components/posts/CopyLinkBtn';
 
