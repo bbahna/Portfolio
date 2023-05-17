@@ -1,6 +1,6 @@
 const metadata = {
 	title: 'Hyoon',
-	description: '프론트엔드 개발자 윤효정입니다.',
+	description: 'Frontend developer - Hyoon portfolio',
 	author: 'jeong_hYoon',
 };
 
