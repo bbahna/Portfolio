@@ -25,11 +25,11 @@ const Posts = ({ posts }: InferGetStaticPropsType<typeof getStaticProps>) => {
 	return (
 		<Container>
 			<Title main="✍🏻 Posts" description="배우고 알게된 것들을 기록합니다." />
-			<div className="flex items-start justify-between m-3">
+			<div className="flex items-start justify-between m-3 max-md:mb-2 max-md:flex-col-reverse">
 				<CategoryList sellect={sellect} setSellect={setSellect} setClick={setClick} />
 				<Search click={click} onChange={handleSearch} onClick={clickSearch} />
 			</div>
-			<div className="mb-5 flex flex-wrap max-lg:max-w-[664px] max-md:content-center mx-auto my-0 max-md:flex-col">
+			<div className="mb-5 flex flex-wrap max-md:max-w-[664px] max-md:content-center mx-auto my-0 max-md:flex-col">
 				{click ? (
 					<>
 						{posts

@@ -2,15 +2,15 @@ import { ChangeEventHandler, MouseEventHandler } from 'react';
 
 interface IPostProps {
 	click: boolean;
-	onClick: MouseEventHandler<SVGSVGElement>;
-	onChange: ChangeEventHandler<HTMLInputElement>;
+	onClick: MouseEventHandler;
+	onChange: ChangeEventHandler;
 }
 
 const Search = ({ click, onClick, onChange }: IPostProps) => {
 	return (
 		<div
-			className={`relative flex flex-row items-center cursor-pointer ${
-				!click && 'theme-bg-hover-2 rounded-2xl duration-100'
+			className={`relative flex flex-row items-center cursor-pointer max-md:mb-4 ${
+				click ? 'max-md:w-full' : 'theme-bg-hover-2 rounded-2xl duration-100'
 			}`}
 		>
 			<svg
@@ -31,11 +31,17 @@ const Search = ({ click, onClick, onChange }: IPostProps) => {
 			<input
 				type="text"
 				className={`mx-1 bg-transparent outline-none appearance-none duration-100 rounded-3xl theme-text-main text-[15px] theme-border theme-border-hover theme-border-focus ${
-					click ? 'flex-1 py-2 pl-12 pr-3 border h-[36px]' : 'flex-0 w-[20px] px-4 py-[5px]'
+					click ? 'flex-1 py-2 pl-12 pr-3 border h-[36px]' : 'flex-0 w-[20px] px-4 max-md:px-3 py-[5px]'
 				}`}
 				onChange={onChange}
 				placeholder={click ? '검색어를 입력해주세요' : ''}
+				// autoFocus
 			/>
+			{!click && (
+				<p className="font-light md:hidden text-[15px] theme-text-3 pl-2 pr-[14px] leading-[36px]" onClick={onClick}>
+					검색하기
+				</p>
+			)}
 		</div>
 	);
 };
