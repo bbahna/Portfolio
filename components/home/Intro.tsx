@@ -4,8 +4,8 @@ import Link from 'next/link';
 const Intro = () => {
 	return (
 		<div className="flex items-center justify-between lg:px-5 max-lg:px-2 max-lg:flex-col">
-			<Image src={`/idea.png`} alt="메인 이미지" width={280} height={280} />
-			<div className="lg:ml-7 mt-7">
+			<Image src={`/intro.png`} alt="메인 이미지" width={280} height={280} />
+			<div className="mt-5 lg:ml-7">
 				<h2 className="mb-3 text-xl">
 					안녕하세요.{` `}
 					<span className="font-medium">프론트엔드 개발자</span> 윤효정입니다.
