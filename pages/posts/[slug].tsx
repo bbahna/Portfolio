@@ -18,11 +18,13 @@ const Post = ({ post }: InferGetStaticPropsType<typeof getStaticProps>) => {
 		<Container customMeta={customMeta}>
 			<div className="max-w-3xl mx-auto my-12 prose">
 				<div className="flex flex-col items-center border-b mb-7 pb-7 theme-border-light">
-					<h1 className="mb-3 font-bold max-lg:text-[34px] text-center relative">
+					<h1 className="mb-3 px-10 font-bold max-lg:text-[34px] text-center relative leading-[44px] break-keep">
 						{post?.title}
 						<CopyLinkBtn />
 					</h1>
-					<p className="mt-0 mb-3 text-lg font-normal text-center max-lg:text-base theme-text-3">{post?.description}</p>
+					<p className="mt-0 mb-3 text-lg font-normal text-center max-lg:text-base theme-text-3 break-keep">
+						{post?.description}
+					</p>
 					<span className="m-0 text-sm font-medium theme-text-5">{post?.date}</span>
 				</div>
 				<MDXComponent />
