@@ -39,6 +39,14 @@ h3 {
 	font-family: 'SCDream', system-ui, sans-serif;
 }
 
+.ellipsis {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	display: -webkit-box;
+	-webkit-line-clamp: 2;
+	-webkit-box-orient: vertical;
+}
+
 &::-webkit-scrollbar {
 	width: 9px;
 }

@@ -14,6 +14,10 @@ interface IPostProps {
 }
 
 const BoxList = ({ post }: IPostProps) => {
+	// New Date Label
+	const daySubtract = Math.abs(new Date().getTime() - new Date(post!.date).getTime());
+	const dayAgo = Math.floor(daySubtract / (1000 * 60 * 60 * 24));
+
 	return (
 		<Link href={post.link ? post.link : `/posts/${post._raw?.flattenedPath}`} target={post.link && '_blank'}>
 			<div
@@ -25,17 +29,22 @@ const BoxList = ({ post }: IPostProps) => {
 					<div className="flex items-center mb-2">
 						<p className="px-3 py-1 text-[14px] rounded-2xl theme-bg-4 mr-2 theme-text-2">{post.category}</p>
 						<p className="text-sm font-light theme-text-2">{post.date}</p>
+						{dayAgo <= 30 && (
+							<span className="px-[6px] leading-[21px] ml-2 bottom-[6px] text-[9px] font-light rounded-md right-0 text-[#fefefe] theme-bg-main-dark">
+								New
+							</span>
+						)}
 					</div>
-					<h2 className="mb-2 text-[22px] font-extrabold theme-text-2 relative">
+					<h2 className="mb-2 leading-8 text-[22px] font-extrabold theme-text-2 relative ellipsis">
 						{post.title}
-						<span className="absolute px-[6px] leading-[21px] ml-2 bottom-1 text-[9px] font-light rounded-md theme-text-dark theme-bg-main opacity-75">
+						<span className="absolute px-[6px] leading-[21px] ml-2 bottom-1 text-[9px] font-light rounded-md text-[#fefefe] theme-bg-main-dark">
 							{post.status}
 						</span>
 					</h2>
-					<p className="text-[15px] font-normal theme-text-3 mb-2 break-keep leading-5 h-[40px]">{post.description}</p>
+					<p className="text-[15px] font-normal theme-text-3 break-keep leading-5 h-[40px] mb-1">{post.description}</p>
 					<div className="flex flex-wrap">
 						{post.tags?.map((i: any) => (
-							<p key={i} className="mr-2 text-[13px] font-light text-zinc-500">
+							<p key={i} className="mr-2 text-[13px] mt-1 font-light text-zinc-500">
 								#{i}
 							</p>
 						))}
