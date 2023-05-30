@@ -32,7 +32,7 @@ const PostList = ({ post, slug }: IPostProps) => {
 				<h2 className="mt-1 text-[22px] font-extrabold theme-text-2 duration-200 theme-text-hover relative">
 					{post.title}
 					{dayAgo <= 30 && (
-						<span className="absolute px-[6px] leading-[21px] ml-2 bottom-[6px] text-[9px] font-light rounded-md theme-text-dark theme-bg-main opacity-75">
+						<span className="absolute px-[6px] leading-[21px] ml-2 bottom-[6px] text-[9px] font-light rounded-md text-[#fefefe] theme-bg-main-dark">
 							New
 						</span>
 					)}
@@ -43,8 +43,8 @@ const PostList = ({ post, slug }: IPostProps) => {
 						src={post.thumbnail}
 						alt="썸네일 이미지"
 						width={120}
-						height={100}
-						className="absolute rounded-lg top-2 right-2 min-h-[75px]"
+						height={73}
+						className="absolute rounded-lg top-2 right-2 min-h-[73px] max-h-[73px]"
 					/>
 				)}
 			</div>
