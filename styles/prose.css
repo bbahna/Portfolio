@@ -32,3 +32,11 @@
 .prose pre code {
 	@apply bg-transparent dark:bg-transparent;
 }
+
+.prose mark {
+	@apply bg-teal-400 dark:bg-emerald-600 px-[3px] rounded-sm;
+}
+
+.prose img {
+	@apply border border-slate-200 dark:border-neutral-700;
+}

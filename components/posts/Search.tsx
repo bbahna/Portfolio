@@ -31,7 +31,7 @@ const Search = ({ click, onClick, onChange }: IPostProps) => {
 			<input
 				type="text"
 				className={`mx-1 bg-transparent outline-none appearance-none duration-100 rounded-3xl theme-text-main text-[15px] theme-border theme-border-hover theme-border-focus ${
-					click ? 'flex-1 py-2 pl-12 pr-3 border h-[36px]' : 'flex-0 w-[20px] px-4 max-md:px-3 py-[5px]'
+					click ? 'flex-1 py-2 pl-12 pr-3 border h-[36px]' : 'flex-0 w-0 px-4 max-md:px-3 py-[5px]'
 				}`}
 				onChange={onChange}
 				placeholder={click ? '검색어를 입력해주세요' : ''}

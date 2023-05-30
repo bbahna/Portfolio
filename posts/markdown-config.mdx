@@ -1,0 +1,64 @@
+---
+title: '마크다운 구성모음'
+description: '마크다운은 이렇게 설정되어 있습니다.'
+date: 2023-05-10
+tags: ['markdown']
+category: 'Reviewed'
+thumbnail: /posts/markdown-config.png
+---
+
+# This is a H1
+
+## This is a H2
+
+### This is a H3
+
+#### This is a H4
+
+##### This is a H5
+
+###### This is a H6
+
+<p>내용은 그냥 이렇게 적으면 됩니다.</p>
+
+```javascript
+// next.config.js
+/** @type {import('next').NextConfig} */
+
+// eslint-disable-next-line @typescript-eslint/no-var-requires
+const { withContentlayer } = require('next-contentlayer');
+
+module.exports = withContentlayer({
+	reactStrictMode: true,
+});
+```
+
+> This is a first blockqute. 첫번째 인용구
+>
+> > This is a second blockqute. 두번째 인용구
+> >
+> > > This is a third blockqute. 세번째 인용구
+
+- 1단계
+  - 2단계
+    - 3단계
+      - 4단계
+
+1. 첫번째
+2. 두번째
+3. 세번째
+
+---
+
+Link: [Google](https://www.google.com/)
+
+_italic 기울임꼴_<br/>
+**bold 굵게**<br/>
+
+<u>underline 밑줄</u>
+<br />
+<mark>marker 형광펜</mark>
+
+<img src="/default.jpg" width="400px" height="300px" title="px(픽셀) 이미지 첨부" alt="default image" />
+
+<aside>⚠️&nbsp;&nbsp;aside 내용은 이렇게 구성됩니다.</aside>

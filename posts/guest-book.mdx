@@ -1,0 +1,107 @@
+---
+title: 'json-server를 활용한 react CRUD 방명록 프로젝트 프론트엔드 개발회고'
+description: 'json-server로 CRUD가 가능한 react 방명록 개인 project 개발기✨'
+date: 2023-04-07
+tags:
+  [
+    'CRUD',
+    'JSON Server',
+    'JavaScript',
+    'React',
+    'refactoring',
+    'style component',
+    '개발회고',
+    '방명록',
+    '프로젝트',
+    '프론트엔드',
+  ]
+category: 'Reviewed'
+thumbnail: /posts/guest-book.gif
+---
+
+## **저장소**
+
+https://github.com/bbahna/Guest-book
+
+## **기술 스택**
+
+React, JavaScript, style-component, json-server
+
+## **개발 기간**
+
+- 1차 개발(UI 및 CRUD 구현): 2022. 10 (약 1.5주)
+- 2차 개발(Refactoring): 2023. 3 (약 1주)
+
+## Read - json server 실행 필요
+
+`$ json-server ./src/api/data.json --port 4000` 명령어로 서버를 실행해야 data가 보여집니다.
+
+![](https://velog.velcdn.com/images/bbahna/post/0c586b56-f2d8-4158-9c73-753545c2a999/image.png)
+(json-server 실행을 하지 않았을 때 보이는 화면)
+
+![](https://velog.velcdn.com/images/bbahna/post/d2c9e786-e384-4e52-b693-87ea9054cbe4/image.png)
+(json-server 실행 후 보이는 화면)
+
+제목은 1줄 이상이 되었을 때 말줄임표로 보이고, 내용은 9줄 이상이 되었을 때 말줄임표로 보이도록 설정해 두었습니다.
+
+![](https://velog.velcdn.com/images/bbahna/post/141f156e-c748-412e-8c92-bd5fd1975dd3/image.png)
+각 안부글을 클릭 시, 모달로 전체 내용이 보이게 되며 최종 update된 날짜가 보여집니다.
+
+[](https://velog.velcdn.com/images/bbahna/post/43534d82-a609-40f1-bbab-b00e4743cd80/image.png)
+내용이 많을 때는 스크롤하여 볼 수 있도록 설정 되어있습니다.
+
+## Create - 안부글 쓰기
+
+![](https://velog.velcdn.com/images/bbahna/post/16da135f-733e-4d35-a686-c040ffe6a78e/image.gif)
+오른쪽 글쓰기 아이콘 버튼을 클릭하면 애니메이션 효과와 함께 사진과 같이 입력창이 보여집니다.
+
+취소 버튼이나 바깥 공간을 클릭하면 글쓰기 이전 상태로 돌아갈 수 있습니다.
+
+![](https://velog.velcdn.com/images/bbahna/post/491be4c2-635b-439d-a98a-c093ccce9abc/image.png)
+글이 많으면 사진처럼 스크롤바가 생기며 이 또한 스타일이 설정되어 있습니다.
+
+![](https://velog.velcdn.com/images/bbahna/post/d3c744fa-0fb8-4936-8b7d-081a7289ae59/image.png)
+글 쓰기를 완료하면 “생성이 완료되었습니다” 알림 메시지와 함께 다시 안부글 리스트를 가져와서 가장 위에 추가된 것을 볼 수 있습니다.
+
+## Update - 글 수정하기
+
+![](https://velog.velcdn.com/images/bbahna/post/6403717a-1fa3-4af4-9c47-03fe1d97e93d/image.png)
+안부글을 hover 하면 오른쪽 위에 수정 아이콘과 삭제 아이콘이 보여진다.
+
+![](https://velog.velcdn.com/images/bbahna/post/b84c616f-7a49-4113-875c-55e19b0adb07/image.png)
+수정 아이콘을 클릭하면 수정 가능한 상태가 되며,
+
+![](https://velog.velcdn.com/images/bbahna/post/6e950eab-8789-448c-9fa0-e1b011b2330e/image.png)
+hover 시 색상을 변경할 수 있으며, 내용이 많을 경우 Create와 동일하게 스크롤바가 생긴다.
+
+## Delete - 안부글 삭제하기
+
+![](https://velog.velcdn.com/images/bbahna/post/de79a8f9-a9ad-4c4f-b77f-8800537f3e9a/image.png)
+안부글을 hover 하면 오른쪽 위에 수정 아이콘과 삭제 아이콘이 보여진다.
+
+![](https://velog.velcdn.com/images/bbahna/post/97bfe247-6e6b-407e-a820-abf146c5e321/image.png)
+삭제 의사를 한번 더 사용자에게 묻는 “삭제 하시겠습니까?” 알림 메시지가 뜨고,
+
+![](https://velog.velcdn.com/images/bbahna/post/c132a043-17de-4113-9bc4-79984bc683b1/image.png)
+확인 버튼을 클릭했을 때 “삭제가 완료되었습니다” 알림 메시지와 함께 다시 안부글 리스트를 가져와서 보여준다.
+
+## 회고
+
+1차 개발이 완료 된 후, 프론트엔드에 대한 지식이 쌓인 후에 다시 보니 부족한 점이 많이 보여서 리팩토링을 다시 진행했다.
+
+> 1. [Create] 저장 후, input이 빈칸이 되도록 수정
+> 2. [Create] user/date data.json 추가
+> 3. [Read] 내용이 길어지면 안보이는 ui 개선
+> 4. [Update] 저장 button '수정했습니다'로 알림문구 수정
+> 5. [Update] 배경색도 edit 가능하도록 수정
+> 6. [Update] 취소 button 추가
+
+결과적으로 이전보다 더 완성도 높은 프로젝트가 되었다 🎉
+
+다만 예전에 만든 프로젝트라 그런지 node 18 버전에서는 실행이 안되는 점이 조금 아쉽다 ㅜ (crud 연습용이라 개선의지는 아직이다🥴)
+
+그리고 작은 프로젝트라 굳이 컴포넌트 구분을 하진 않았는데 2번 재사용되는 코드들이 조금 있었다. 다음 프로젝트엔 컴포넌트에 대한 설계부터 시작하고 진행하고 싶다.
+
+crud 연습하기에 json-server는 훌륭한 것 같다. 아주 만족스러운 경험이였다!
+
+앞으로 가능하다면 json-server와 함께 배포가 가능한 곳이 있으면 배포도 도전해보고 싶다 :3
