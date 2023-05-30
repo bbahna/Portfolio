@@ -1,4 +1,5 @@
 import { InferGetStaticPropsType } from 'next';
+import Image from 'next/image';
 import { useMDXComponent } from 'next-contentlayer/hooks';
 import { allPosts } from 'contentlayer/generated';
 import Container from '@/components/layout/Container';
@@ -12,13 +13,14 @@ const Post = ({ post }: InferGetStaticPropsType<typeof getStaticProps>) => {
 		title: post?.title,
 		description: post?.description,
 		date: new Date(post!.date).toISOString(),
+		thumbnail: post?.thumbnail,
 	};
 
 	return (
 		<Container customMeta={customMeta}>
 			<div className="max-w-3xl mx-auto my-12 prose">
 				<div className="flex flex-col items-center border-b mb-7 pb-7 theme-border-light">
-					<h1 className="mb-3 px-10 font-bold max-lg:text-[34px] text-center relative leading-[44px] break-keep">
+					<h1 className="mb-3 px-10 font-bold max-lg:text-[34px] text-center relative leading-[44px] break-keep`">
 						{post?.title}
 						<CopyLinkBtn />
 					</h1>
@@ -27,6 +29,9 @@ const Post = ({ post }: InferGetStaticPropsType<typeof getStaticProps>) => {
 					</p>
 					<span className="m-0 text-sm font-medium theme-text-5">{post?.date}</span>
 				</div>
+				{post?.thumbnail && (
+					<Image src={`${post?.thumbnail}`} width={100} height={100} className="w-full h-fit" alt="썸네일 이미지" />
+				)}
 				<MDXComponent />
 			</div>
 			<Utterances />
