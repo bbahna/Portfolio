@@ -30,7 +30,7 @@ const Post = ({ post }: InferGetStaticPropsType<typeof getStaticProps>) => {
 					<span className="m-0 text-sm font-medium theme-text-5">{post?.date}</span>
 				</div>
 				{post?.thumbnail && (
-					<Image src={`${post?.thumbnail}`} width={100} height={100} className="w-full h-fit" alt="썸네일 이미지" />
+					<Image src={`${post?.thumbnail}`} width={800} height={600} className="w-full h-fit" alt="썸네일 이미지" />
 				)}
 				<MDXComponent />
 			</div>
