@@ -43,10 +43,10 @@ const BoxList = ({ post }: IPostProps) => {
 					</h2>
 					<p className="text-[15px] font-normal theme-text-3 break-keep leading-5 h-[40px] mb-1">{post.description}</p>
 					<div className="flex flex-wrap">
-						{post.tags?.map((i: any) => (
-							<p key={i} className="mr-2 text-[13px] mt-1 font-light text-zinc-500">
+						{post.hashtags?.map((i: any) => (
+							<span key={i} className="mr-2 text-[13px] mt-1 font-light text-zinc-500">
 								#{i}
-							</p>
+							</span>
 						))}
 					</div>
 				</div>

@@ -7,7 +7,7 @@ const project: {
 	description: string;
 	thumbnail?: string;
 	date: string;
-	tags: Array<string>;
+	hashtags: Array<string>;
 }[] = [
 	{
 		id: 1,
@@ -18,7 +18,7 @@ const project: {
 		description: '6개월 이상 현업 개발자의 팀 사이드 프로젝트 커뮤니티',
 		thumbnail: '/project/project_1.png',
 		date: '2023.5 ~ 2023.7(예정)',
-		tags: ['비사이드', '15기', '아이스브레이킹'],
+		hashtags: ['비사이드', '15기', '아이스브레이킹'],
 	},
 	{
 		id: 2,
@@ -29,7 +29,7 @@ const project: {
 		description: 'Next로 제작한 개인 포트폴리오 웹 사이트',
 		thumbnail: '/project/project_2.png',
 		date: '2023.4 ~ 2023.5(1차 완료)',
-		tags: ['개인', '포트폴리오', '다크모드', '반응형'],
+		hashtags: ['개인', '포트폴리오', '다크모드', '반응형'],
 	},
 	{
 		id: 3,
@@ -40,7 +40,7 @@ const project: {
 		description: 'json-server로 CRUD가 가능한 react 개인 프로젝트',
 		thumbnail: '/project/project_3.png',
 		date: '2022.10 ~ 2023.3',
-		tags: ['개인', 'CRUD', '방명록'],
+		hashtags: ['개인', 'CRUD', '방명록'],
 	},
 	{
 		id: 4,
@@ -51,7 +51,7 @@ const project: {
 		description: 'gatsby template로 제작한 기술 블로그 개인 프로젝트',
 		thumbnail: '/project/project_4.png',
 		date: '2022.5 ~ 2022.6',
-		tags: ['개인', '블로그', '템플릿', '커스터마이징'],
+		hashtags: ['개인', '블로그', '템플릿', '커스터마이징'],
 	},
 ];
 
