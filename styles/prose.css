@@ -10,11 +10,11 @@
 }
 
 .prose li::marker {
-	@apply text-slate-300 dark:text-gray-600;
+	@apply font-bold text-slate-300 dark:text-gray-500;
 }
 
 .prose blockquote {
-	@apply border-l-slate-200 dark:border-l-gray-700;
+	@apply border-l-slate-300 dark:border-l-gray-600;
 }
 
 .prose a {
@@ -39,4 +39,8 @@
 
 .prose img {
 	@apply border border-slate-200 dark:border-neutral-700;
+}
+
+.prose hr {
+	@apply my-10 border-stone-300 dark:border-stone-700;
 }
