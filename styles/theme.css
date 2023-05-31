@@ -53,7 +53,7 @@
 }
 
 .theme-text-2 {
-	@apply text-zinc-800 dark:text-zinc-200;
+	@apply text-zinc-800 dark:text-zinc-300;
 }
 
 .theme-text-3 {
@@ -74,6 +74,10 @@
 
 .theme-text-main {
 	@apply text-teal-400 dark:text-emerald-500;
+}
+
+.theme-text-main-dark {
+	@apply text-[#4FCABC] dark:text-[#059669];
 }
 
 .theme-text-hover {
