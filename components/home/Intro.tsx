@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 const Intro = () => {
 	return (
-		<div className="flex items-center justify-between lg:px-5 max-lg:px-2 max-lg:flex-col">
+		<div className="flex items-center justify-between lg:px-6 max-lg:px-2 max-lg:flex-col">
 			<Image src={`/intro.png`} alt="메인 이미지" width={280} height={280} />
 			<div className="mt-5 lg:ml-7">
 				<h2 className="mb-3 text-xl">

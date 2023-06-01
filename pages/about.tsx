@@ -6,9 +6,9 @@ const About = () => {
 	return (
 		<Container>
 			<Title main="🙋🏻‍♀️ About" description="매력적인 사용자 경험을 추구합니다." />
-			<div className="flex items-center justify-center max-lg:px-2 max-lg:flex-col">
+			<div className="flex items-center justify-center mb-8 lg:mb-10 lg:px-4 max-lg:px-2 max-lg:flex-col">
 				<Image src={`/hyoon.png`} alt="소개 이미지" width={280} height={280} />
-				<p className="font-light max-lg:mt-5">
+				<p className="font-light max-lg:mt-8 lg:ml-5">
 					안녕하세요. <span className="font-normal theme-text-main">아이디어를 현실화하는</span>{' '}
 					<span className="font-medium">프론트엔드 개발자</span> 윤효정입니다.
 					<br />
@@ -20,6 +20,37 @@ const About = () => {
 					<span className="font-normal theme-text-main">선한 영향력을 끼치는</span> 개발자가 되고 싶습니다.
 				</p>
 			</div>
+			<div className="items-center justify-between lg:flex lg:px-10">
+				<div className="max-lg:mb-[34px] max-lg:px-2 min-w-[400px]">
+					<h2 className="mb-3 text-2xl font-semibold theme-text-2">Interested in Tech</h2>
+					<ul className="ml-2">
+						<li>
+							🌎 <span className="font-medium">Web, App</span>
+						</li>
+						<li>
+							🖥 <span className="font-medium">FrontEnd</span>: JS, TS, React, Next
+						</li>
+						<li>
+							🎨 <span className="font-medium">UI/UX</span>
+						</li>
+					</ul>
+				</div>
+				<div className="max-lg:px-2 min-w-[400px]">
+					<h2 className="mb-3 text-2xl font-semibold theme-text-2">Interested in Others</h2>
+					<ul className="ml-2">
+						<li>
+							🏋🏻‍♀️ <span className="font-medium">Exercise</span>: Running, Crossfit, Hiking
+						</li>
+						<li className="font-medium">✈️ Travel</li>
+						<li className="font-medium">🍲 Food, Cook</li>
+					</ul>
+				</div>
+			</div>
+			<style jsx>{`
+				li {
+					margin-bottom: 8px;
+				}
+			`}</style>
 		</Container>
 	);
 };
