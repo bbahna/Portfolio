@@ -44,7 +44,7 @@ const PostList = ({ post, slug }: IPostProps) => {
 						alt="썸네일 이미지"
 						width={120}
 						height={73}
-						className="absolute rounded-lg top-2 right-2 min-h-[73px] max-h-[73px]"
+						className="absolute rounded-lg top-2 right-2 min-h-[73px] max-h-[73px] border theme-border-light"
 					/>
 				)}
 			</div>
