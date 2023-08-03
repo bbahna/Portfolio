@@ -14,7 +14,7 @@ const project: {
 		title: '얼음땡 side project',
 		category: 'Next',
 		status: '완료',
-		link: 'https://hyoon-share.notion.site/Next-Portfolio-web-site-ab7b701e0f294a24ab9afded438f9bad',
+		link: 'https://hyoon-share.notion.site/Next-side-project-6271f98017cf425f8b42013900338180',
 		description: '6개월 이상 현업 개발자의 팀 사이드 프로젝트 커뮤니티',
 		thumbnail: '/project/project_1.png',
 		date: '2023.5 ~ 2023.7',
