@@ -16,7 +16,7 @@ const project: {
 		status: '완료',
 		link: 'https://hyoon-share.notion.site/Next-side-project-6271f98017cf425f8b42013900338180',
 		description: '6개월 이상 현업 개발자의 팀 사이드 프로젝트 커뮤니티',
-		thumbnail: '/project/project_1.png',
+		thumbnail: '/project/project_1.svg',
 		date: '2023.5 ~ 2023.7',
 		hashtags: ['비사이드', '팀프로젝트', '아이스브레이킹'],
 	},
@@ -28,7 +28,7 @@ const project: {
 		link: 'https://hyoon-share.notion.site/Next-Portfolio-web-site-ab7b701e0f294a24ab9afded438f9bad',
 		description: 'Next로 제작한 개인 포트폴리오 웹 사이트',
 		thumbnail: '/project/project_2.png',
-		date: '2023.4 ~ 2023.5(1차 완료)',
+		date: '2023.4 ~ 2023.5',
 		hashtags: ['개인', '포트폴리오', '다크모드', '반응형'],
 	},
 	{
