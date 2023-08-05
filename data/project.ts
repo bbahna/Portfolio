@@ -39,7 +39,7 @@ const project: {
 		link: 'https://hyoon-share.notion.site/React-CRUD-project-65d5fbae0b55458585073351af79e3c8',
 		description: 'json-server로 CRUD가 가능한 react 개인 프로젝트',
 		thumbnail: '/project/project_3.png',
-		date: '2022.10 ~ 2023.3',
+		date: '2022.10(1차), 2023.3(2차)',
 		hashtags: ['개인', 'CRUD', '방명록'],
 	},
 	{
