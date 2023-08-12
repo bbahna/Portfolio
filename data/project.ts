@@ -22,7 +22,7 @@ const project: {
 	},
 	{
 		id: 2,
-		title: 'Portfolio web site',
+		title: 'hyoon portfolio site',
 		category: 'Next',
 		status: '완료',
 		link: 'https://hyoon-share.notion.site/Next-Portfolio-web-site-ab7b701e0f294a24ab9afded438f9bad',
@@ -44,7 +44,7 @@ const project: {
 	},
 	{
 		id: 4,
-		title: 'Blog project',
+		title: 'tech blog project',
 		category: 'Gatsby',
 		status: '완료',
 		link: 'https://hyoon-share.notion.site/Gatsby-Blog-project-e00db9d6957c423399c3b62d94a8c64e',
