@@ -1,6 +1,6 @@
 ## next.js Portfolio project
 
-> 2023.4 ~ 5(1차 완료)
+> node-version: 18.x.x
 
 ### 초기 설정
 
