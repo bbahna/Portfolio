@@ -47,17 +47,38 @@ h3 {
 	-webkit-box-orient: vertical;
 }
 
-&::-webkit-scrollbar {
+/* 오른쪽 스크롤바 스타일 */
+::-webkit-scrollbar {
 	width: 9px;
+	height: 9px; /* 하단 스크롤바 높이 지정 */
 }
-&::-webkit-scrollbar-thumb {
+
+::-webkit-scrollbar-thumb {
 	@apply bg-zinc-400;
 	border-radius: 10px;
 	cursor: pointer;
 }
-&::-webkit-scrollbar-track {
+
+::-webkit-scrollbar-track {
 	@apply bg-gray-200;
 	border-radius: 10px;
+}
+
+/* 하단 스크롤바 스타일 */
+::-webkit-scrollbar-thumb:vertical {
+	@apply bg-zinc-400; /* 하단 스크롤바에 원하는 스타일 적용 */
+}
+
+::-webkit-scrollbar-thumb:horizontal {
+	@apply bg-zinc-400; /* 오른쪽 스크롤바와 동일한 스타일 적용 */
+}
+
+::-webkit-scrollbar-track:vertical {
+	@apply bg-gray-200; /* 하단 스크롤바 트랙에 원하는 스타일 적용 */
+}
+
+::-webkit-scrollbar-track:horizontal {
+	@apply bg-gray-200; /* 오른쪽 스크롤바 트랙과 동일한 스타일 적용 */
 }
 
 @supports (font: -apple-system-body) and (-webkit-appearance: none) {
