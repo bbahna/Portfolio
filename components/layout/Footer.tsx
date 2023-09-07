@@ -1,6 +1,6 @@
 const Footer = () => {
 	return (
-		<footer className="flex flex-col items-center justify-center w-full pb-6 duration-500 pt-9 Ztransition ">
+		<footer className="flex flex-col items-center justify-center w-full pt-10 pb-6 duration-500 Ztransition ">
 			<div className="flex items-center justify-center gap-4 pt-5 border-t-2 theme-border-y w-36">
 				<a
 					href="mailto:hyoon.dev@gmail.com"
