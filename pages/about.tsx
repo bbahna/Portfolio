@@ -1,10 +1,13 @@
+import { NextSeo } from 'next-seo';
 import Image from 'next/image';
+
 import Container from '@/components/layout/Container';
 import Title from '@/components/common/Title';
 
 const About = () => {
 	return (
 		<Container>
+			<NextSeo title="Hyoon - About" description="매력적인 사용자 경험을 추구합니다." />
 			<Title main="🙋🏻‍♀️ About" description="매력적인 사용자 경험을 추구합니다." />
 			<div className="flex items-center justify-center mb-8 lg:mb-10 lg:px-4 max-lg:px-2 max-lg:flex-col">
 				<Image src={`/hyoon.png`} alt="소개 이미지" width={280} height={280} />
