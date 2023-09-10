@@ -16,9 +16,16 @@ const Intro = () => {
 					<span className="font-normal theme-text-main">선한 영향력을 끼치고</span> 싶습니다.
 				</h3>
 				<div className="flex items-center justify-between">
-					<Link href="/about">
-						<div className="font-light transition-transform theme-icon-main hover:scale-110">→ About</div>
-					</Link>
+					<div className="flex">
+						<Link href="/about">
+							<div className="font-light transition-transform theme-icon-main hover:scale-110">→ About</div>
+						</Link>
+						{/* <Link href="https://hyoon-share.notion.site/hyoon-e669d80400f64128b536582b0af7756a" target="_blank">
+							<div className="ml-5 text-[15px] font-light transition-transform theme-icon-main hover:scale-110">
+								→ Resume
+							</div>
+						</Link> */}
+					</div>
 					<div className="flex">
 						<a
 							href="mailto:hyoon.dev@gmail.com"
