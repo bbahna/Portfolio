@@ -1,16 +1,9 @@
 import Image from 'next/image';
 import Link from 'next/link';
+import { projectProps } from '@/data/project';
 
 interface IPostProps {
-	// title: string;
-	// stack: string;
-	// status: string;
-	// link: string;
-	// description: string;
-	// image: string;
-	// date: string;
-	// hashtag: Array<string>;
-	post: any;
+	post: projectProps;
 }
 
 const BoxList = ({ post }: IPostProps) => {
@@ -23,9 +16,9 @@ const BoxList = ({ post }: IPostProps) => {
 			<div
 				className={`flex flex-col justify-between m-4 overflow-hidden duration-200 rounded-md max-w-[300px] min-w-[300px] max-md:mx-0 max-md:mb-2 ${
 					post.thumbnail ? 'h-[380px]' : 'h-[200px]'
-				} shadow-jsx dark:bg-[#2a2a2c]`}
+				} shadow-jsx bg-[#f7f8fa] dark:bg-[#2a2a2c] `}
 			>
-				<div className="flex-1 px-5 pt-6 pb-3 bg-[#f7f8fa] dark:bg-[#2a2a2c] h-[280px]">
+				<div className="flex-1 px-5 pt-6 pb-3 h-[280px]">
 					<div className="flex items-center mb-2">
 						<p className="px-3 py-1 text-[14px] rounded-2xl theme-bg-4 mr-2 theme-text-2">{post.category}</p>
 						<p className="text-sm font-light theme-text-2">{post.date}</p>
@@ -59,6 +52,7 @@ const BoxList = ({ post }: IPostProps) => {
 						className="h-[200px] flex-0 max-md:w-full"
 					/>
 				)}
+				{/* {post.thumbnail && <div className={`w-[300px] h-[200px] bg-cover max-md:w-full ${post.thumbnail}`} />} */}
 			</div>
 			<style jsx>{`
 				.shadow-jsx {

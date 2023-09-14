@@ -1,18 +1,13 @@
 import Image from 'next/image';
 import Link from 'next/link';
 
-// interface IPostList {
-// 	title: string;
-// 	description: string;
-// 	date: string;
-// 	tags: string;
-// 	series?: string;
-// 	thumbnail?: string;
-// }
-
 interface IPostProps {
-	// post: Array<IPostList>;
-	post: any;
+	post: {
+		title: string;
+		description: string;
+		date: string;
+		thumbnail: string;
+	};
 	slug: string;
 }
 
@@ -28,8 +23,7 @@ const PostList = ({ post, slug }: IPostProps) => {
 					post.thumbnail && 'pr-[135px]'
 				}`}
 			>
-				<span className="block leading-[14px] text-xs font-medium theme-text-5">{post.date}</span>
-				<h2 className="mt-1 text-[22px] font-extrabold theme-text-2 duration-200 theme-text-hover relative">
+				<h2 className="text-[22px] font-extrabold theme-text-2 duration-200 theme-text-hover relative">
 					{post.title}
 					{dayAgo <= 30 && (
 						<span className="absolute px-[6px] leading-[21px] ml-2 bottom-[6px] text-[9px] font-light rounded-md text-[#fefefe] theme-bg-main-dark">
@@ -37,14 +31,15 @@ const PostList = ({ post, slug }: IPostProps) => {
 						</span>
 					)}
 				</h2>
-				<p className="text-[15px] font-normal theme-text-3">{post.description}</p>
+				<p className="my-2 text-[14px] font-normal theme-text-3 font-scdream">{post.description}</p>
+				<span className="block leading-[14px] text-[13px] font-normal theme-text-5">{post.date}</span>
 				{post.thumbnail && (
 					<Image
 						src={post.thumbnail}
 						alt="썸네일 이미지"
 						width={120}
-						height={73}
-						className="absolute rounded-lg top-2 right-2 min-h-[73px] max-h-[73px] border theme-border-light"
+						height={72}
+						className="absolute rounded-lg top-[2px] right-2 min-h-[73px] max-h-[73px] border theme-border-light"
 					/>
 				)}
 			</div>

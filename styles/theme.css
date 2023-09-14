@@ -1,3 +1,12 @@
+/* 글꼴 */
+.font-suit {
+	font-family: 'SUIT', system-ui, sans-serif;
+}
+
+.font-scdream {
+	font-family: 'SCDream', system-ui, sans-serif;
+}
+
 /* 배경 색 */
 .theme-bg-0 {
 	@apply bg-white dark:bg-zinc-900;

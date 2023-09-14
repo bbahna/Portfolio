@@ -1,13 +1,11 @@
 import { useEffect, useState } from 'react';
-import Head from 'next/head';
-import { useRouter } from 'next/router';
+import { NextSeo } from 'next-seo';
+
 import metadata from '@/data/metadata';
-import navlinks from '@/data/navlinks';
 import Navigation from './Navigation';
 import Footer from './Footer';
 
 const Container = (props: any) => {
-	const router = useRouter();
 	const [show, setShow] = useState(false);
 
 	useEffect(() => {
@@ -20,31 +18,30 @@ const Container = (props: any) => {
 		return () => window.removeEventListener('scroll', handleWindowScroll);
 	}, []);
 
-	const meta = {
-		title: metadata.title,
-		description: metadata.description,
-		author: metadata.author,
-		...props.customMeta,
-	};
-
 	const handleScrollTop = () => {
 		window.scrollTo({ top: 0, behavior: 'smooth' });
 	};
 
 	return (
 		<div className="flex flex-col items-center w-screen min-h-screen theme-bg-0 pt-[60px]">
-			<Head>
-				<title>
-					{meta.title}
-					{/* {meta.title} | {navlinks.find((f) => f.link == router.pathname)?.title} */}
-				</title>
-				<meta property="og:description" content={meta.description} name="description" />
-				<meta property="og:site_name" content={meta.author} />
-				<meta property="og:type" content="website" />
-				<meta property="og:url" content="https://www.hyoon.dev/" />
-				<meta property="og:image" content="https://www.hyoon.dev/og_image.png" />
-				<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
-			</Head>
+			<NextSeo
+				openGraph={{
+					siteName: `${metadata.author}`,
+					type: 'website',
+					url: 'https://www.hyoon.dev/',
+					images: [
+						{
+							url: 'https://www.hyoon.dev/og_image.png',
+						},
+					],
+				}}
+				additionalMetaTags={[
+					{
+						name: 'viewport',
+						content: 'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0',
+					},
+				]}
+			/>
 			<Navigation />
 			<main className="flex-1 w-full max-w-screen-lg p-3">{props.children}</main>
 			<Footer />

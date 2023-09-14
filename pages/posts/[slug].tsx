@@ -1,6 +1,8 @@
 import { InferGetStaticPropsType } from 'next';
 import Image from 'next/image';
+import { NextSeo } from 'next-seo';
 import { useMDXComponent } from 'next-contentlayer/hooks';
+
 import { allPosts } from 'contentlayer/generated';
 import Container from '@/components/layout/Container';
 import Utterances from '@/components/posts/Utterances';
@@ -9,17 +11,19 @@ import CopyLinkBtn from '@/components/posts/CopyLinkBtn';
 const Post = ({ post }: InferGetStaticPropsType<typeof getStaticProps>) => {
 	const MDXComponent = useMDXComponent(post!.body.code);
 
-	const customMeta = {
-		title: post?.title,
-		category: post?.category,
-		description: post?.description,
-		date: new Date(post!.date).toISOString(),
-		thumbnail: post?.thumbnail,
-		tags: post?.tags,
-	};
-
 	return (
-		<Container customMeta={customMeta}>
+		<Container>
+			<NextSeo
+				title={`Hyoon - Posts : ${post?.title}`}
+				description={post?.description}
+				openGraph={{
+					images: [
+						{
+							url: post?.thumbnail ? post.thumbnail : '',
+						},
+					],
+				}}
+			/>
 			<div className="max-w-3xl mx-auto mt-6 mb-5 prose">
 				<div className="flex flex-col items-center border-b theme-border-light mb-7 pb-9 ">
 					<div className="flex items-center justify-between mb-3">
