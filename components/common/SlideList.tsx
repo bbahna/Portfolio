@@ -18,13 +18,7 @@ const SlideList = ({ post }: { post: projectProps }) => {
 					<p className="text-[13.5px] font-scdream font-normal theme-text-3 break-keep leading-5 h-[40px] mb-2">
 						{post.description}
 					</p>
-					<div className="flex flex-wrap">
-						{post.hashtags?.map((i: any) => (
-							<span key={i} className="mr-2 text-[12px] font-light theme-text-5">
-								#{i}
-							</span>
-						))}
-					</div>
+					<span className="block leading-[14px] text-[13px] font-normal theme-text-5">{post.date}</span>
 				</div>
 			</div>
 			<style jsx>{`

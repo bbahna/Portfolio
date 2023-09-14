@@ -23,7 +23,7 @@ const PostList = ({ post, slug }: IPostProps) => {
 					post.thumbnail && 'pr-[135px]'
 				}`}
 			>
-				<h2 className="mb-[2px] text-[22px] font-extrabold theme-text-2 duration-200 theme-text-hover relative">
+				<h2 className="text-[22px] font-extrabold theme-text-2 duration-200 theme-text-hover relative">
 					{post.title}
 					{dayAgo <= 30 && (
 						<span className="absolute px-[6px] leading-[21px] ml-2 bottom-[6px] text-[9px] font-light rounded-md text-[#fefefe] theme-bg-main-dark">
@@ -31,8 +31,8 @@ const PostList = ({ post, slug }: IPostProps) => {
 						</span>
 					)}
 				</h2>
-				<p className="mb-1 text-[14px] font-normal theme-text-3 font-scdream">{post.description}</p>
-				<span className="block leading-[14px] text-[12px] font-normal theme-text-5">{post.date}</span>
+				<p className="my-2 text-[14px] font-normal theme-text-3 font-scdream">{post.description}</p>
+				<span className="block leading-[14px] text-[13px] font-normal theme-text-5">{post.date}</span>
 				{post.thumbnail && (
 					<Image
 						src={post.thumbnail}
