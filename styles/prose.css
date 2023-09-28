@@ -26,7 +26,7 @@
 }
 
 .prose code {
-	@apply px-[7px] py-[3px] m-2 text-[13px] font-medium leading-7 rounded-md before:content-none after:content-none bg-[#eee] dark:bg-zinc-800 text-red-500;
+	@apply px-[7px] py-[3px] m-2 text-[13px] font-medium leading-7 rounded-md before:content-none after:content-none bg-[#eee] dark:bg-zinc-800 text-red-500 break-words;
 }
 
 .prose pre code {
