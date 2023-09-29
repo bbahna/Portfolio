@@ -26,7 +26,7 @@ const Index = () => {
 					<a
 						className="content-center p-[7px] text-xs tracking-wide duration-200 bg-white rounded-2xl dark:text-zinc-800 hover-effect cursor-pointer"
 						onClick={() => {
-							// window.alert('조금만 기다려 주세요 ෆ⸒⸒');
+							window.alert('조금만 기다려 주세요 ෆ⸒⸒');
 						}}
 					>
 						구독
