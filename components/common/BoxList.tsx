@@ -22,7 +22,7 @@ const BoxList = ({ post }: IPostProps) => {
 					<div className="flex items-center mb-2">
 						<p className="px-3 py-1 text-[14px] rounded-2xl theme-bg-4 mr-2 theme-text-2">{post.category}</p>
 						<p className="text-sm font-light theme-text-2">{post.date}</p>
-						{dayAgo <= 30 && (
+						{dayAgo <= 60 && (
 							<span className="px-[6px] leading-[21px] ml-2 bottom-[6px] text-[9px] font-light rounded-md right-0 text-[#fefefe] theme-bg-main-dark">
 								New
 							</span>
