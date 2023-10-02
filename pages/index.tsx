@@ -38,6 +38,20 @@ const Index = () => {
 				p {
 					font-family: 'SCDream', system-ui, sans-serif;
 				}
+				.hover-effect {
+					&:hover {
+						box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.1);
+						transform: scale(1.05);
+					}
+				}
+				.shadow-jsx {
+					box-shadow: 0px 0px 18px rgba(0, 0, 0, 0.1);
+					&:hover {
+						box-shadow: 0 7px 18px rgba(0, 0, 0, 0.2);
+						transform: scale(1.03);
+						// transform: translateY(-4px);
+					}
+				}
 			`}</style>
 		</div>
 	);
