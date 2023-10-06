@@ -6,6 +6,10 @@ import linkdata from '@/data/linkdata';
 import CopyLinkBtn from '@/components/posts/CopyLinkBtn';
 
 const Index = () => {
+	useEffect(() => {
+		window.localStorage.setItem('theme', 'light');
+	}, []);
+
 	return (
 		<div className="flex flex-col min-h-screen m-auto bg-gray-100">
 			<div className="max-w-[460px] flex flex-col items-center w-full min-h-screen px-5 py-8 m-auto">
