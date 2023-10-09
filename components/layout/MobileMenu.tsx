@@ -27,7 +27,7 @@ const MobileMenu = () => {
 				} translate-x-full translate-y-0 z-10 fixed top-0 bottom-0 right-0 w-full ease duration-300 rotate-0 theme-bg-0`}
 			>
 				<div className="p-2">
-					<Link href="/">
+					<Link href="/home">
 						<Image src={`/logo.png`} alt="로고" width={45} height={45} />
 					</Link>
 				</div>
