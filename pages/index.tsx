@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { useEffect } from 'react';
+import { NextSeo } from 'next-seo';
 
 import linkdata from '@/data/linkdata';
 import CopyLinkBtn from '@/components/posts/CopyLinkBtn';
@@ -12,6 +13,11 @@ const Index = () => {
 
 	return (
 		<div className="flex flex-col min-h-screen m-auto bg-gray-100">
+			<NextSeo
+				title="프론트엔드 개발자 효동동"
+				description="디자인도 하고 웹도 만들고 앱도 만드는 새럼"
+				openGraph={{ images: [{ url: '/main.jpg' }] }}
+			/>
 			<div className="max-w-[460px] flex flex-col items-center w-full min-h-screen px-5 py-8 m-auto">
 				<div className="flex items-center justify-between w-full mb-2">
 					<a className="duration-200 rounded-2xl hover-effect">
@@ -26,7 +32,7 @@ const Index = () => {
 				</div>
 				<div className="flex flex-col items-center flex-1 w-full mb-5">
 					<Image
-						src="/hyoon.jpg"
+						src="/main.jpg"
 						alt="프로필_이미지"
 						width={500}
 						height={500}
