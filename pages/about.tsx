@@ -31,7 +31,7 @@ const About = () => {
 							🌎 <span className="font-medium">Web, App</span>
 						</li>
 						<li>
-							🖥 <span className="font-medium">FrontEnd</span>: JS, TS, React, Next
+							🖥 <span className="font-medium">FrontEnd</span>: JS, TS, React, Next, RN
 						</li>
 						<li>
 							🎨 <span className="font-medium">UI/UX</span>
