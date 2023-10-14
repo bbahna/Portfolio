@@ -38,7 +38,10 @@ const Index = () => {
 						height={500}
 						className="w-[100px] h-[100px] rounded-[30px] mb-6"
 					/>
-					<h1 className="mb-3 text-xl font-bold dark:text-zinc-800">프론트엔드 개발자 효동동</h1>
+					<h1 className="relative mb-3 text-xl font-bold dark:text-zinc-800">
+						프론트엔드 개발자 효동동
+						<span className="absolute bottom-0 right-0 h-[6px] opacity-40 w-[58px] theme-bg-main-light" />
+					</h1>
 					<p className="mb-5 text-sm dark:text-zinc-700 text-zinc-700">디자인도 하고 웹도 만들고 앱도 만드는 새럼</p>
 					{linkdata.map((data) => (
 						<Link href={data.link} key={data.title} className="w-full" target="_blank">
