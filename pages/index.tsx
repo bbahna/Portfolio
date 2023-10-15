@@ -21,7 +21,7 @@ const Index = () => {
 			<div className="max-w-[460px] flex flex-col items-center w-full min-h-screen px-5 py-8 m-auto">
 				<div className="flex items-center justify-between w-full mb-2">
 					<a className="duration-200 rounded-2xl hover-effect">
-						<CopyLinkBtn containerStyle="bg-white w-[30px] h-[30px]" iconColor="#333" />
+						<CopyLinkBtn containerStyle="bg-white w-[30px] h-[30px]" copyIconColor="#333" checkIconColor="#14b8a6" />
 					</a>
 					<a
 						className="content-center p-[7px] text-xs tracking-wide duration-200 bg-white rounded-2xl dark:text-zinc-800 hover-effect cursor-pointer"
