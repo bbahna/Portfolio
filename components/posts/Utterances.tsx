@@ -1,21 +1,25 @@
-import { memo } from 'react';
+import { useEffect, useRef } from 'react';
 
-const Utterances = () => {
-	return (
-		<section
-			ref={(elem) => {
-				if (!elem) return;
-				const scriptElement = document.createElement('script');
-				scriptElement.src = 'https://utteranc.es/client.js';
-				scriptElement.async = true;
-				scriptElement.setAttribute('repo', 'bbahna/Portfolio');
-				scriptElement.setAttribute('issue-term', 'pathname');
-				scriptElement.setAttribute('theme', 'github-light');
-				scriptElement.setAttribute('crossorigin', 'anonymous');
-				elem.appendChild(scriptElement);
-			}}
-		/>
-	);
-};
+export default function Utterances() {
+	const ref = useRef<HTMLDivElement>(null);
 
-export default memo(Utterances);
+	useEffect(() => {
+		const getTheme = localStorage.getItem('theme');
+
+		const theme = getTheme === 'dark' ? 'github-dark' : 'github-light';
+		if (!ref.current || ref.current.hasChildNodes()) return;
+
+		const scriptElem = document.createElement('script');
+		scriptElem.src = 'https://utteranc.es/client.js';
+		scriptElem.async = true;
+		scriptElem.crossOrigin = 'anonymous';
+		scriptElem.setAttribute('repo', 'bbahna/Portfolio');
+		scriptElem.setAttribute('issue-term', 'pathname');
+		scriptElem.setAttribute('label', ':speech_balloon:');
+		scriptElem.setAttribute('theme', theme);
+
+		ref.current.appendChild(scriptElem);
+	}, []);
+
+	return <section ref={ref} />;
+}
