@@ -25,7 +25,9 @@ const Index = () => {
 					</a>
 					<a
 						className="content-center p-[7px] text-xs tracking-wide duration-200 bg-white rounded-2xl dark:text-zinc-800 hover-effect cursor-pointer"
-						onClick={() => window.alert('조금만 기다려 주세요 ෆ⸒⸒')}
+						onClick={() => {
+							// window.alert('조금만 기다려 주세요 ෆ⸒⸒');
+						}}
 					>
 						구독
 					</a>
@@ -44,7 +46,7 @@ const Index = () => {
 					</h1>
 					<p className="mb-5 text-sm dark:text-zinc-700 text-zinc-700">디자인도 하고 웹도 만들고 앱도 만드는 새럼</p>
 					{linkdata.map((data) => (
-						<Link href={data.link} key={data.title} className="w-full" target="_blank">
+						<Link href={data.link} key={data.title} className="w-full" target={data.link == '/home' ? '' : '_blank'}>
 							<div className="flex flex-row items-center p-4 mb-3 duration-300 bg-white rounded-xl dark:bg-white shadow-jsx hover:bg-teal-200 hover:dark:bg-teal-200">
 								<div className="mr-4 w-[72px] h-[72px] overflow-hidden rounded-md flex justify-center">
 									<Image src={data.image} alt="로고" width={500} height={500} className="max-w-none w-auto h-[72px]" />
