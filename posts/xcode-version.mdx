@@ -1,0 +1,52 @@
+---
+title: 'Xcode "failed to prepare device for development" issue 해결'
+description: 'iPhone 업데이트 후, 위와 같은 이슈 발견!'
+date: '2023. 9. 21'
+tags: ['DeviceSupport', 'Xcode', 'bugfix', 'iOS', 'reactnative']
+category: 'React Native'
+thumbnail: /posts/xcode-version.png
+---
+
+Xcode 14.2 버전을 사용하여 ios 업데이트 이후, 위와 같은 이슈 발견!
+
+확인해보니 Xcode 버전이 낮고, ios 버전이 높을 경우 발생하는 것.
+
+(code 마다 지원되는 iOS 의 버전은 당시에 나온 최신 OS가 기준이 됨)
+
+Xcode에 해당 ios의 버전이 없어서 발생하는 오류이기에, 아래 진입하여 경로에 접근한다.
+
+`/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/DeviceSupport`
+
+- 아래 **다운로드 링크**에서 해당 아이폰의 ios 버전을 다운받아, 압축을 풀어서 `DeviceSupport` 내부에 넣으면 된다
+
+![](https://velog.velcdn.com/images/bbahna/post/1335ab8c-a6ba-49e2-ad22-c3daf1406e47/image.png)
+
+### 기 존
+
+![](https://velog.velcdn.com/images/bbahna/post/e2787527-b06f-461b-b9a8-eb26876db7e7/image.png)
+
+### 추 가
+
+![](https://velog.velcdn.com/images/bbahna/post/3aa0b215-685f-4ddd-b548-f077eda3e10d/image.png)
+
+## 파일 다운로드 링크
+
+[https://github.com/filsv/iOSDeviceSupport](https://github.com/filsv/iOSDeviceSupport)
+
+[https://github.com/JinjunHan/iOSDeviceSupport](https://github.com/JinjunHan/iOSDeviceSupport)
+
+## 추가로, iTerm 터미널로 Xcode 경로가 찾아지지 않는 현상 해결
+
+![](https://velog.velcdn.com/images/bbahna/post/f1836282-df50-4c47-b215-b9bc132b96e5/image.png)
+
+아니 분명 Xcode가 설치되어 있는데 Applications 리스트가 없다고 하는 이상한 mac.. 🤷🏻‍♀️
+
+![](https://velog.velcdn.com/images/bbahna/post/601ec692-d817-4e40-bb2c-ef418c86f896/image.png)
+
+응용 프로그램 → 해당 Xcode 오른쪽 클릭 → 서비스 → New iTerm2 window Here 클릭하면 가능..
+
+![](https://velog.velcdn.com/images/bbahna/post/3af818d1-df53-4c90-8f74-f45584271a4e/image.png)
+
+이렇게 하면 되고, 저렇게 하면 안되는 이유 mac 미스터리..
+
+무튼 해결해서 다행!
