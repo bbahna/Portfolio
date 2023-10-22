@@ -16,13 +16,7 @@ const Post = ({ post }: InferGetStaticPropsType<typeof getStaticProps>) => {
 			<NextSeo
 				title={`Hyoon - Posts : ${post?.title}`}
 				description={post?.description}
-				openGraph={{
-					images: [
-						{
-							url: post?.thumbnail ? post.thumbnail : '',
-						},
-					],
-				}}
+				openGraph={{ images: [{ url: post?.thumbnail ? post.thumbnail : '' }] }}
 			/>
 			<div className="max-w-3xl mx-auto mt-6 mb-5 prose">
 				<div className="flex flex-col items-center border-b theme-border-light mb-7 pb-9 ">

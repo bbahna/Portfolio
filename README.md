@@ -32,15 +32,17 @@
 
 ### [📄 UI 작업](https://github.com/bbahna/Portfolio/issues/3)
 
-- home
+- **main**
+  - link
+- **home**
   - about, new post
-- 🙋🏻‍♀️ about
-- ✍🏻 posts
+- **about**
+- **posts**
   - all
   - detail
-- 🗂️ project
+- **project**
   - beside, protfolio, guestBook, gatsby
-- 🚫 404
+- **404**
   - page
 
 ### [📦 Package 추가](https://github.com/bbahna/Portfolio/issues/4)
@@ -48,6 +50,7 @@
 - tailwind plugin
 - contentlayer
 - code block
+- next seo
 - +storybook
 
 ### [⚡ 기능(feature)](https://github.com/bbahna/Portfolio/issues/5)
@@ -55,13 +58,14 @@
 - all
   - responsive
   - dark mode
-  - share url
+  - share url - title, desc, img
 - posts
   - comment
   - search
   - thumb nail
   - link copy
   - categaory
+  - tags
 
 ### [🖌️ 효과(animation)](https://github.com/bbahna/Portfolio/issues/7)
 

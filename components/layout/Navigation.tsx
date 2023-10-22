@@ -37,7 +37,7 @@ const Navigation = () => {
 		<header ref={headerRef} className="fixed top-0 left-0 z-20 w-full p-2 theme-bg-0 flex-0">
 			<div className="flex flex-row items-center justify-between max-w-screen-lg m-auto">
 				<div className="flex flex-row items-center duration-200 rounded-lg theme-bg-hover-2">
-					<Link href="/">
+					<Link href="/home">
 						<Image src={`/logo.png`} alt="로고" width={45} height={45} />
 					</Link>
 				</div>

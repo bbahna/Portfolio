@@ -6,7 +6,7 @@ const SlideList = ({ post }: { post: projectProps }) => {
 	return (
 		<Link href={post.link} target={post.link && '_blank'}>
 			<div
-				className={`flex flex-col justify-between m-3 overflow-hidden rounded-md max-w-[250px] min-w-[250px] max-md:mx-0 max-md:mb-2 h-[300px] bg-[#f7f8fa] dark:bg-[#2a2a2c] shadow-jsx `}
+				className={`flex flex-col justify-between m-3 overflow-hidden rounded-md max-w-[250px] min-w-[250px] max-md:mx-0 max-md:mb-2 h-[300px] bg-[#f7f8fa] dark:bg-[#2a2a2c] shadow-jsx`}
 			>
 				{post.thumbnail && (
 					<div className="h-[166px] overflow-hidden">
