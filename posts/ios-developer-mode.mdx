@@ -1,0 +1,50 @@
+---
+title: 'ios 개발자 모드가 안보일 때, 해결 방법'
+description: '아이폰 처음 설정하고, 개발자 모드가 안 보이는 이슈가 생겼다 ..! ㄷㄷ'
+date: '2023. 10. 13'
+tags: ['Xcode', 'bugfix', 'iOS', 'reactnative', '개발자모드']
+category: 'React Native'
+thumbnail: /posts/ios-developer-mode.png
+---
+
+Xcode에 아이폰을 연결하려고 할 때, `Developer mode disabled` 메시지가 나와서
+
+개발자 모드를 키려고 `설정 > 개인정보 보호 및 보안 >  보안`에 ‘차단 모드’만 있는 당황스러운 상황이 발생하였다.
+
+![](https://velog.velcdn.com/images/bbahna/post/e446b16f-c8b1-40ce-927a-3f557cc93a12/image.png)
+
+ios 16.7.2v를 사용하고 있는 중고 아이폰 처음 설정하고, 개발자 모드가 안 보이는 이슈가 생겼다 ..! ㄷㄷ
+
+그러던 중 발견 한 [스택 오버플로우의 솔루션](https://stackoverflow.com/questions/73733701/how-to-enable-developer-mode-on-ios-16-0) !!
+
+> Settings -> Privacy & Security -> Developer Mode -> turn ON Developer > mode >
+>
+> But in my case i don't have that Developer mode option: If any one facing same issue.
+>
+> Follow steps: In xcode press Command + shft + 2 -> Unpair your device -> Prompt on your phone -> Tap on Trust . Go To above path and This time you will see developer option.
+>
+> Cheers🍻
+
+Xcode에 접속하여 `Command + shft + 2` 입력 후, 타켓 아이폰을 `Unpair Device` 진행한 다음, 다시 연결하여 아이폰에서 신뢰하는 컴퓨터로 추가 후, 해당 경로로 다시 이동하면 보일 것!
+
+![](https://velog.velcdn.com/images/bbahna/post/8f1ce6e6-8676-4d4b-8138-88ed4dce26cd/image.png)
+
+그대로 따라하면 Xcode에서 `Command + shft + 2` 진행하면 위와 같은 화면이 보인다!
+
+위 화면에서 나의 아이폰을 연결 해제하고 컴퓨터에서도 해제 후 다시 연결하면 아래와 같이 신뢰하시겠습니까? 하는 메시지가 뜬다.
+
+![](https://velog.velcdn.com/images/bbahna/post/4385d2db-ec36-44b3-9a9c-b83afa115bdd/image.jpeg)
+
+![](https://velog.velcdn.com/images/bbahna/post/f28a9c9e-98a6-4d3a-9489-c9bb06123a8f/image.jpeg)
+
+기기 암호까지 잘 입력하고 다시 `설정 > 개인정보 보호 및 보안 >  보안` 경로로 이동하면, 개발자 모드가 생긴 것을 볼 수가 있었다🌚
+
+![](https://velog.velcdn.com/images/bbahna/post/cfb04de7-6953-4cba-bba1-a670797abd90/image.jpeg)
+
+후후.
+
+![](https://velog.velcdn.com/images/bbahna/post/ce51bc42-f58d-4c5f-ae22-a2bc7b9e4cde/image.png)
+
+개발자 모드를 켜면 Xcode에 장치 연결도 무사히 완료~
+
+![](https://velog.velcdn.com/images/bbahna/post/3ca5c81d-e6fa-49df-ae5b-a4017a370cd8/image.jpeg)
