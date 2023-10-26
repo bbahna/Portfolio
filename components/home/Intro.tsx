@@ -18,7 +18,7 @@ const Intro = () => {
 				<div className="flex items-center justify-between">
 					<div className="flex">
 						<Link href="/about">
-							<div className="font-light transition-transform theme-icon-main hover:scale-110">→ About</div>
+							<p className="font-light transition-transform theme-icon-main hover:scale-110">→ About</p>
 						</Link>
 						{/* <Link href="https://hyoon-share.notion.site/hyoon-e669d80400f64128b536582b0af7756a" target="_blank">
 							<div className="ml-5 text-[15px] font-light transition-transform theme-icon-main hover:scale-110">

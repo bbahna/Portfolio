@@ -2,13 +2,15 @@ import { useState, useEffect } from 'react';
 
 interface CopyLinkBtnProps {
 	containerStyle?: string;
-	iconColor?: string;
+	checkIconColor?: string;
+	copyIconColor?: string;
 	iconSize?: string | number;
 }
 
 const CopyLinkBtn = ({
 	containerStyle = 'theme-bg-main-light absolute bottom-[2px] w-8 h-8 ml-3',
-	iconColor = '#fff',
+	checkIconColor = '#fff',
+	copyIconColor = '#fff',
 	iconSize = 16,
 }: CopyLinkBtnProps) => {
 	const [copied, setCopied] = useState(false);
@@ -46,7 +48,7 @@ const CopyLinkBtn = ({
 					width={iconSize}
 					viewBox="0 0 16 16"
 					strokeWidth={1}
-					fill={iconColor}
+					fill={checkIconColor}
 					className="mx-auto my-0"
 				>
 					<path d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path>
@@ -59,7 +61,7 @@ const CopyLinkBtn = ({
 					fill="none"
 					viewBox="0 0 24 24"
 					strokeWidth={2}
-					stroke={iconColor}
+					stroke={copyIconColor}
 					className="mx-auto my-0"
 				>
 					<path
