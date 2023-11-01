@@ -1,10 +1,12 @@
-import Image from 'next/image';
 import Link from 'next/link';
 
 const Intro = () => {
 	return (
-		<div className="flex items-center justify-between lg:px-6 max-lg:px-2 max-lg:flex-col">
-			<Image src={`/intro.png`} alt="메인 이미지" width={280} height={280} />
+		<div className="flex items-center justify-center px-2 max-lg:flex-col">
+			{/* 메인 이미지 */}
+			<div
+				className={`max-md:w-full max-md:h-[46vw] w-[400px] h-[200px] bg-no-repeat bg-cover bg-[url('/og_image_white.png')] dark:bg-[url('/og_image.png')]`}
+			/>
 			<div className="mt-5 lg:ml-7">
 				<h2 className="mb-3 text-xl">
 					안녕하세요.{` `}

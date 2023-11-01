@@ -12,7 +12,7 @@ const Home = ({ posts }: InferGetStaticPropsType<typeof getStaticProps>) => {
 	return (
 		<Container>
 			<NextSeo title={metadata.title} description={metadata.description} />
-			<h1 className="text-3xl italic font-extrabold">Hi, I&apos;m hyoon 👋🏻</h1>
+			<h1 className="text-3xl italic font-extrabold mb-7">Hi, I&apos;m hyoon 👋🏻</h1>
 			<Intro />
 			<RecentPosts posts={posts} />
 			<SideProject />

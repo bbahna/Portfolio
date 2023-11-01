@@ -25,7 +25,7 @@ const PostList = ({ post, slug }: IPostProps) => {
 			>
 				<h2 className="text-[22px] font-extrabold theme-text-2 duration-200 theme-text-hover relative">
 					{post.title}
-					{dayAgo <= 30 && (
+					{dayAgo <= 60 && (
 						<span className="absolute px-[6px] leading-[21px] ml-2 bottom-[6px] text-[9px] font-light rounded-md text-[#fefefe] theme-bg-main-dark">
 							New
 						</span>
