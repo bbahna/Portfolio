@@ -46,13 +46,12 @@ const BoxList = ({ post }: IPostProps) => {
 				{post.thumbnail && (
 					<Image
 						src={post.thumbnail}
-						alt="기본 이미지"
+						alt="썸네일 이미지"
 						width={300}
 						height={200}
 						className="h-[200px] flex-0 max-md:w-full"
 					/>
 				)}
-				{/* {post.thumbnail && <div className={`w-[300px] h-[200px] bg-cover max-md:w-full ${post.thumbnail}`} />} */}
 			</div>
 			<style jsx>{`
 				.shadow-jsx {

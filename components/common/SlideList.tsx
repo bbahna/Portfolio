@@ -10,7 +10,7 @@ const SlideList = ({ post }: { post: projectProps }) => {
 			>
 				{post.thumbnail && (
 					<div className="h-[166px] overflow-hidden">
-						<Image src={post.thumbnail} alt="기본 이미지" width={250} height={166} className="flex-0 max-md:w-full" />
+						<Image src={post.thumbnail} alt="썸네일 이미지" width={300} height={250} className="flex-0 max-md:w-full" />
 					</div>
 				)}
 				<div className="flex-1 px-[15px] pt-4 pb-3">
