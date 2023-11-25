@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import Image from 'next/image';
 import Link from 'next/link';
 import { useEffect } from 'react';
@@ -63,7 +64,7 @@ const Index = () => {
 					<Image src="/logo.png" alt="푸터_로고_이미지" width={500} height={500} className="w-11 h-11" />
 					<h2 className="ml-2 text-2xl font-extrabold dark:text-zinc-800">Hyoon</h2>
 				</div>
-				<p className="text-[11.5px] text-zinc-500 dark:text-zinc-500 italic">
+				<p className="text-[11.5px] text-zinc-500 dark:text-zinc-500 italic mb-3">
 					이 사이트의 코드는
 					<Link
 						href="https://github.com/bbahna/Portfolio"
@@ -74,6 +75,13 @@ const Index = () => {
 					</Link>
 					확인 할 수 있어요 (*´∀`*)ゞ
 				</p>
+				<Link href="https://hits.seeyoufarm.com">
+					<img
+						className="w-[65px]"
+						alt="hits"
+						src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fhyoon.dev&count_bg=%23f3f4f6&title_bg=%23F3F4F6&icon=&icon_color=%237d7f86&title=%E0%B7%86&edge_flat=false"
+					/>
+				</Link>
 			</div>
 			<style jsx>{`
 				p {
