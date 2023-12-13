@@ -24,14 +24,14 @@ const Index = () => {
 					<a className="duration-200 rounded-2xl hover-effect">
 						<CopyLinkBtn containerStyle="bg-white w-[30px] h-[30px]" copyIconColor="#333" checkIconColor="#14b8a6" />
 					</a>
-					<a
+					{/* <a
 						className="content-center p-[7px] text-xs tracking-wide duration-200 bg-white rounded-2xl dark:text-zinc-800 hover-effect cursor-pointer"
 						onClick={() => {
 							window.alert('조금만 기다려 주세요 ෆ⸒⸒');
 						}}
 					>
 						구독
-					</a>
+					</a> */}
 				</div>
 				<div className="flex flex-col items-center flex-1 w-full mb-5">
 					<Image
