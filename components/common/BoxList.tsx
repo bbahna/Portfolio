@@ -22,7 +22,7 @@ const BoxList = ({ post }: IPostProps) => {
 					<div className="flex items-center mb-2">
 						<p className="px-3 py-1 text-[14px] rounded-2xl theme-bg-4 mr-2 theme-text-2">{post.category}</p>
 						<p className="text-sm font-light theme-text-2">{post.date}</p>
-						{dayAgo <= 60 && (
+						{dayAgo <= 30 && (
 							<span className="px-[6px] leading-[21px] ml-2 bottom-[6px] text-[9px] font-light rounded-md right-0 text-[#fefefe] theme-bg-main-dark">
 								New
 							</span>
@@ -47,9 +47,9 @@ const BoxList = ({ post }: IPostProps) => {
 					<Image
 						src={post.thumbnail}
 						alt="썸네일 이미지"
-						width={300}
-						height={200}
-						className="h-[200px] flex-0 max-md:w-full"
+						width={320}
+						height={180}
+						className="min-h-[180px] flex-0 max-md:w-full"
 					/>
 				)}
 			</div>
