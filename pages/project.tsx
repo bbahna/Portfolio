@@ -3,7 +3,7 @@ import { NextSeo } from 'next-seo';
 import Container from '@/components/layout/Container';
 import Title from '@/components/common/Title';
 import project from '@/data/project';
-import BoxList from '@/components/common/BoxList';
+import BoxList from '@/components/project/BoxList';
 
 const Project = () => {
 	return (

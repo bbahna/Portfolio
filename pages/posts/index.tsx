@@ -6,8 +6,8 @@ import { allPosts } from 'contentlayer/generated';
 import Container from '@/components/layout/Container';
 import Title from '@/components/common/Title';
 import Search from '@/components/posts/Search';
-import BoxList from '@/components/common/BoxList';
 import CategoryList from '@/components/posts/CategoryList';
+import PostList from '@/components/posts/PostList';
 
 const Posts = ({ posts }: InferGetStaticPropsType<typeof getStaticProps>) => {
 	const [search, setSearch] = useState<string>('');
@@ -28,7 +28,7 @@ const Posts = ({ posts }: InferGetStaticPropsType<typeof getStaticProps>) => {
 		<Container>
 			<NextSeo title="Hyoon - Posts" description="배우고 알게된 것들을 기록합니다." />
 			<Title main="✍🏻 Posts" description="배우고 알게된 것들을 기록합니다." />
-			<div className="flex items-start justify-between m-3 max-md:mb-2 max-md:flex-col-reverse">
+			<div className="flex items-start justify-between m-3 max-md:mb-4 max-md:flex-col-reverse">
 				<CategoryList sellect={sellect} setSellect={setSellect} setClick={setClick} />
 				<Search click={click} onChange={handleSearch} onClick={clickSearch} />
 			</div>
@@ -38,16 +38,16 @@ const Posts = ({ posts }: InferGetStaticPropsType<typeof getStaticProps>) => {
 						{posts
 							.filter((post) => post.title.toLowerCase().includes(search))
 							.map((post: any) => (
-								<BoxList post={post} key={post._id} />
+								<PostList post={post} slug={post._raw.flattenedPath} key={post._id} />
 							))}
 					</>
 				) : (
 					<>
 						{sellect === 'all'
-							? posts.map((post: any) => <BoxList post={post} key={post._id} />)
+							? posts.map((post: any) => <PostList post={post} slug={post._raw.flattenedPath} key={post._id} />)
 							: posts
 									.filter((post: any) => post.category === sellect)
-									.map((post: any) => <BoxList post={post} key={post._id} />)}
+									.map((post: any) => <PostList post={post} slug={post._raw.flattenedPath} key={post._id} />)}
 					</>
 				)}
 			</div>

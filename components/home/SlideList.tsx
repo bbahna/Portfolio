@@ -14,7 +14,7 @@ const SlideList = ({ post }: { post: projectProps }) => {
 					</div>
 				)}
 				<div className="flex-1 px-[15px] pt-4 pb-3">
-					<h2 className="mb-2 leading-8 text-[22px] font-extrabold theme-text-2 relative ellipsis">{post.title}</h2>
+					<h2 className="mb-2 leading-8 text-xl font-bold theme-text-2 relative ellipsis">{post.title}</h2>
 					<p className="text-[13.5px] font-scdream font-normal theme-text-3 break-keep leading-5 h-[40px] mb-2">
 						{post.description}
 					</p>
