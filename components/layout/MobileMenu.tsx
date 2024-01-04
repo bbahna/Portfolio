@@ -37,7 +37,7 @@ const MobileMenu = () => {
 							<h2
 								className={`${
 									router.pathname.startsWith(`${nav.link}`) && 'theme-text-main'
-								} text-4xl max-w-sm font-bold mb-10 cursor-pointer`}
+								} text-[34px] max-w-sm font-bold mb-7 cursor-pointer`}
 							>
 								{nav.icon} {nav.title}
 							</h2>

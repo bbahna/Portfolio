@@ -19,11 +19,11 @@ const PostList = ({ post, slug }: IPostProps) => {
 	return (
 		<Link href={`/posts/${slug}`} passHref>
 			<div
-				className={`relative w-full p-2 mb-2 duration-150 rounded-md hover:bg-gray-100 dark:hover:bg-zinc-800 ${
+				className={`relative w-full p-2 mb-3 duration-150 rounded-md hover:bg-gray-100 dark:hover:bg-zinc-800 ${
 					post.thumbnail && 'pr-[135px]'
 				}`}
 			>
-				<h2 className="text-[22px] font-extrabold theme-text-2 duration-200 theme-text-hover relative">
+				<h2 className="text-xl font-bold theme-text-2 duration-200 theme-text-hover relative">
 					{post.title}
 					{dayAgo <= 30 && (
 						<span className="absolute px-[6px] leading-[21px] ml-2 bottom-[6px] text-[9px] font-light rounded-md text-[#fefefe] theme-bg-main-dark">

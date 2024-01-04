@@ -8,7 +8,7 @@ const Intro = () => {
 				className={`max-md:w-full max-md:h-[46vw] w-[400px] h-[200px] bg-no-repeat bg-cover bg-[url('/og_image_white.png')] dark:bg-[url('/og_image.png')]`}
 			/>
 			<div className="mt-5 lg:ml-7">
-				<h2 className="mb-3 text-xl">
+				<h2 className="mb-2 text-[19px]">
 					안녕하세요.{` `}
 					<span className="font-medium">프론트엔드 개발자</span> 윤효정입니다.
 					<br />
