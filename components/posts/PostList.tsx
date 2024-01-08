@@ -17,9 +17,9 @@ const PostList = ({ post, slug }: IPostProps) => {
 	const dayAgo = Math.floor(daySubtract / (1000 * 60 * 60 * 24));
 
 	return (
-		<Link href={`/posts/${slug}`} passHref>
+		<Link href={`/posts/${slug}`} passHref className="w-full">
 			<div
-				className={`relative w-full p-2 mb-3 duration-150 rounded-md hover:bg-gray-100 dark:hover:bg-zinc-800 ${
+				className={`relative p-2 mb-3 duration-150 rounded-md hover:bg-gray-100 dark:hover:bg-zinc-800 ${
 					post.thumbnail && 'pr-[135px]'
 				}`}
 			>
