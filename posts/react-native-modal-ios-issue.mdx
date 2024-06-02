@@ -1,0 +1,43 @@
+---
+title: 'react-native-modal ios 모달에서 모달 띄울 때 안됨'
+description: '앱 개발 중 모달 안에서 버튼을 클릭했을 때, 다른 모달이 열리도록 하는 ui가 있었다.'
+date: '2024-06-01'
+tags: ['ios modal', 'react-native-modal', 'reactnative', 'setTimeout']
+category: 'React Native'
+thumbnail: /posts/react-native-modal-ios-issue.png
+---
+
+_(참고 사진)_
+![](https://velog.velcdn.com/images/bbahna/post/7bd7ae1c-3b43-40ac-aad1-ad3bbd196bbc/image.png)
+
+앱 개발 중 모달 안에서 버튼을 클릭했을 때, 다른 모달이 열리도록 하는 ui가 있었다.
+
+android로 개발을 끝내고, ios로 테스트를 하던 중 모달1 안의 버튼을 클릭했는데 모달2가 열리지 않는 것이다!
+
+찾아보니 아래와 같이 setTimeout으로 해결하는 방법이 있었다.. 약간의 딜레이를 줘서 실행되도록 하는 것.. 찝찝하지만 되도록하는 나름의 해결 방법이긴 하다^^;
+
+```jsx
+import Modal from 'react-native-modal';
+
+// 코드 추가
+setTimeout(() => {
+  setIsTwoModal(true);
+}, 500);
+
+// 모달 코드
+<Modal
+  isVisible={isOneModal}
+  onBackdropPress={() => {
+    setIsModal(false);
+  }}
+/>
+<Modal
+  isVisible={isTwoModal}
+  onBackdropPress={() => {
+    setIsModal(false);
+  }}
+/>
+
+```
+
+![](https://velog.velcdn.com/images/bbahna/post/0b89efa3-5d84-4282-bb3f-7706908fe96e/image.png)
