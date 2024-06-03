@@ -1,0 +1,65 @@
+---
+title: 'mac에서 safari 개발자 모드 열기 디버그 방법'
+description: 'Mac safari에서는 이상이 없던 것이 iPhone safari에서는 문제가 생길 때가 있다.'
+date: '2024-06-03'
+tags: ['mac safari', 'dev mode', 'debugging', '개발자모드', '웹 인스펙터']
+category: 'Web'
+thumbnail: /posts/mac-safari-debug.png
+---
+
+Mac safari에서는 이상이 없던 것이 iPhone safari에서는 문제가 생길 때가 있다.
+
+그땐 safari에서 아래와 같은 설정을 해주면 된다.
+
+<aside>💡 macOs 14.4 기준이지만, 이전 버전에서도 확인 가능해요.</aside>
+
+1. 먼저 mac과 iphone을 케이블로 연결해준다.
+
+2. 그럼 iphone에서 ‘이 컴퓨터를 신뢰하시겠습니까?’ 메시지가 뜬다.
+
+3. 신뢰를 누른다.
+
+   <img src="https://velog.velcdn.com/images/bbahna/post/1e8c8c18-3f28-4e86-9b1c-2d0e29cab4ae/image.png" width="350" />
+
+4. [Safari > 설정…] 클릭
+
+   ![](https://velog.velcdn.com/images/bbahna/post/cfcceb5c-8492-4655-948b-4b20deda3be1/image.png)
+
+5. ☑️ 웹 개발자를 위한 기능 보기
+
+   ![](https://velog.velcdn.com/images/bbahna/post/9612138c-1141-47ba-9039-f304b7c30f8d/image.png)
+
+6. [Safari 설정 > 고급 > 웹 인스펙터] ON
+
+   <img src="https://velog.velcdn.com/images/bbahna/post/8b542f56-10ef-4476-a76e-d94b8f81c95b/image.png" width="350" />
+
+7. 연결을 하면 Safari 개발자용에서 내 iPhone에 열려있는 사이트를 볼 수 있다.
+
+   ![](https://velog.velcdn.com/images/bbahna/post/d19cdd82-d151-4472-9134-91925388da0b/image.png)
+
+   이렇게 hover를 하면, 나의 iPhone에서 파란색 커버로 알려준다. click하면 이렇게 웹 인스펙터 우리가 아는 개발자 모드를 확인 할 수 있다~
+
+   <img src="https://velog.velcdn.com/images/bbahna/post/5f19188e-3b48-42d6-8bd2-03a2694405ef/image.png" width="350" />
+
+   ![](https://velog.velcdn.com/images/bbahna/post/e2f4265b-9269-4f0b-a19e-2a78b1fca276/image.png)
+
+## 아이폰에서 로컬 서버 실행
+
+휴대폰에서 로컬 서버는 맥에서 [ngrok](https://ngrok.com/docs/getting-started/) 설치 `brew install ngrok/ngrok/ngrok`한 후, `ngrok http 3000` 명령어로 실행하면 된다.
+
+```tsx
+ngrok                                                                   (Ctrl+C to quit)
+
+Session Status                online
+Account                       inconshreveable (Plan: Free)
+Version                       3.0.0
+Region                        United States (us)
+Latency                       78ms
+Web Interface                 http://127.0.0.1:4040
+Forwarding                    https://84c5df474.ngrok-free.dev -> http://localhost:8080
+
+Connections                   ttl     opn     rt1     rt5     p50     p90
+                              0       0       0.00    0.00    0.00    0.00
+```
+
+위처럼 포워딩 url을 주기 때문에 iPhone에서 접속하기 편하다 ㅎㅎ (사이트에서 회원가입 후 oauth config 필요) `ngrok config add-authtoken <TOKEN>`
