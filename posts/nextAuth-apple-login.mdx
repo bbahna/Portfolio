@@ -1,0 +1,187 @@
+---
+title: '조금 헤맨 NextAuth 애플 소셜 로그인 apple login 구현기'
+description: '애플 개발자 센터에 등록하는 잘 정리된 글도 있었으나, 나의 헤맨 원인 중 많은 시간이 환경 변수 값을 잘못 지정한 것에 있었다. 또한 추가적으로 경험했던 버그들을 기록하고자 남깁니다. 다들 한 번쯤은 헤매지 않을까 싶어요..'
+date: '2024-06-18'
+tags:
+  [
+    'AppleProvider',
+    'NextAuth',
+    'client_secret',
+    '그저감격',
+    '리다이렉트',
+    '버그기록',
+    '소셜로그인',
+    '애플로그인',
+    '환경변수',
+  ]
+category: 'Next'
+thumbnail: /posts/nextAuth-apple-login.png
+---
+
+> 💡 [애플 개발자 센터에 등록하는 잘 정리된 글](https://velog.io/@dngur9801/Next.js-%EC%82%BD%EC%A7%88%ED%95%98%EB%A9%B4%EC%84%9C-%EA%B5%AC%ED%98%84%ED%95%9C-Next-auth%EB%A1%9C-%EC%95%A0%ED%94%8C-%EC%86%8C%EC%85%9C-%EB%A1%9C%EA%B7%B8%EC%9D%B8-%EC%97%B0%EB%8F%99)도 있었으나, 나의 헤맨 원인 중 많은 시간이 환경 변수 값을 잘못 지정한 것에 있었다.
+> 또한 추가적으로 경험했던 버그들을 기록하고자 남깁니다. 다들 한 번쯤은 헤매지 않을까 싶어요..
+
+## 애플 로그인 구현 코드
+
+```jsx
+// login.jsx
+import { signIn, useSession } from 'next-auth/react';
+
+const { data: session } = useSession();
+
+<LoginButton onClick={() => signIn('apple')}>
+	<AppleLogo />
+	<LoginText>Apple로 로그인</LoginText>
+</LoginButton>;
+```
+
+```jsx
+// app/api/auth/[...nextauth]/route.ts
+import { createPrivateKey } from 'crypto';
+import process from 'process';
+
+import { SignJWT } from 'jose';
+import NextAuth from 'next-auth';
+import AppleProvider, { AppleProfile } from 'next-auth/providers/apple';
+
+async function handler(req, res) {
+	// AppleProvider clientSecret 토큰 생성
+	const getAppleToken = async () => {
+		const key = `-----BEGIN PRIVATE KEY-----\n${process.env.APPLE_PRIVATE_KEY}\n-----END PRIVATE KEY-----`;
+		const appleToken = await new SignJWT({})
+			.setAudience('https://appleid.apple.com')
+			.setIssuer(process.env.APPLE_TEAM_ID!)
+			.setIssuedAt(new Date().getTime() / 1000)
+			.setExpirationTime(new Date().getTime() / 1000 + 3600 * 2)
+			.setSubject(process.env.APPLE_ID!)
+			.setProtectedHeader({
+				alg: 'ES256',
+				kid: process.env.APPLE_KEY_ID,
+			})
+			.sign(createPrivateKey(key));
+		return appleToken;
+	};
+
+	return NextAuth(req, res, {
+	  // 애플 로그인 시, 쿠키 필요함
+		cookies: {
+			pkceCodeVerifier: {
+				name: 'next-auth.pkce.code_verifier',
+				options: {
+					httpOnly: true,
+					sameSite: 'none',
+					path: '/',
+					secure: true,
+				},
+			},
+		},
+		providers: [
+			AppleProvider({
+				clientId: process.env.APPLE_ID!,
+				clientSecret: await getAppleToken(),
+				profile(profile: AppleProfile) {
+					return {
+						id: profile.sub,
+						email: profile.email,
+						from: 'apple',
+					};
+				},
+			}),
+		],
+		callbacks: {
+			async jwt({ token, user }) {
+				return { ...token, ...user };
+			},
+			async session({ session, token }) {
+				session.user = token as any;
+				return session;
+			},
+		},
+	});
+}
+
+export { handler as GET, handler as POST };
+```
+
+## 애플 개발자 센터 로그인 초기 설정 (환경 변수)
+
+[](https://developer.apple.com/account/resources/identifiers/list)
+
+### App IDs 추가
+
+![](https://velog.velcdn.com/images/bbahna/post/f2355b06-ecde-4e43-86c7-1da6e0418fc5/image.png)
+
+![](https://velog.velcdn.com/images/bbahna/post/72caa1bc-6be5-44fa-8b82-59043a11ef9d/image.png)
+
+(Bundle ID는 도메인을 역순으로 해서 작성하는 것 추천)
+
+→ 여기서 환경변수 `APPLE_TEAM_ID`는 App IDs의 App ID Prefix 입니다.
+
+![](https://velog.velcdn.com/images/bbahna/post/ddc2d239-ec04-4e48-b813-c0018d71c838/image.png)
+
+### Services IDs 추가
+
+![](https://velog.velcdn.com/images/bbahna/post/81f86888-0486-4e18-acd3-fec1f9b4f37c/image.png)
+![](https://velog.velcdn.com/images/bbahna/post/c6ee946e-8768-44fe-9502-b9695f637f9d/image.png)
+
+(App ID의 Bundle ID와 중복 불가)
+
+→ 여기서 환경변수 `APPLE_ID`는 Services IDs의 Identifier 입니다.
+
+![](https://velog.velcdn.com/images/bbahna/post/e77c9ffb-d854-42c4-b53d-5260c1dc11e1/image.png)
+
+(Primary App ID는 앞서 추가한 App ID와 연결)
+
+(Domains and Subdomains에 도메인을 추가하고, Return URLs에 https://(도메인명)/api/auth/callback/apple으로 추가)
+
+### Keys 추가
+
+![](https://velog.velcdn.com/images/bbahna/post/01869e7e-7c81-41ac-a76c-23db31424fbf/image.png)
+![](https://velog.velcdn.com/images/bbahna/post/b296b596-87ca-47fa-bb60-99c2df920522/image.png)
+
+(key는 단 한 번만 다운로드 가능하니 조심해야 한다.)
+
+→ 여기서 환경변수 `APPLE_KEY_ID`는 Keys의 Key ID 값 입니다.
+
+![](https://velog.velcdn.com/images/bbahna/post/8ee36cb2-925e-4458-905b-d2ac50d3ea6a/image.png)
+![](https://velog.velcdn.com/images/bbahna/post/25f0c968-b80f-4984-994b-2cd076f5e547/image.png)
+
+→ 여기서 환경변수 `APPLE_PRIVATE_KEY`는 View Key Details에서 Download한 파일의 내용입니다.
+
+![](https://velog.velcdn.com/images/bbahna/post/2409f762-8a4c-425a-83d6-85dabb44f68a/image.png)
+
+## 중간중간 발생한 버그 기록
+
+1. invalid_request, Invalid web redirect url.
+
+   - http://localhost 개발계에서는 확인 불가하여 Services IDs에 추가한 도메인으로 배포해서 확인할 수 있다.
+     <img
+     	src="https://velog.velcdn.com/images/bbahna/post/0453654e-0477-4951-a077-ebd81fc3d12e/image.png"
+     	width="300"
+     />
+
+2. Try signing in with a different account.
+   - `cookies: { ... }` 코드 추가 안할 경우, `https://{도메인명}/api/auth/signin/error=OAuthCallback` 이동되며, 이런 화면이 뜹니다.
+     <img
+     	src="https://velog.velcdn.com/images/bbahna/post/f0e35e14-d180-4137-957d-74769f9e7f17/image.png"
+     	width="300"
+     />
+
+## 설정 성공 시 보여지는 화면
+
+     <img
+     	src="https://velog.velcdn.com/images/bbahna/post/491ac49a-1891-4e08-a611-4b01f4c26fdf/image.png"
+     	width="300"
+     />
+     <img
+     	src="https://velog.velcdn.com/images/bbahna/post/6e4763a3-63d1-4895-8375-5348b04572c5/image.png"
+     	width="300"
+     />
+
+→ 여기서 `Apple ID를 사용해 {Services ID Description}에 로그인하기`로 보여집니다.
+
+---
+
+_(감격)_
+
+![](https://velog.velcdn.com/images/bbahna/post/42896452-2906-49eb-965c-4487f193cd13/image.png)
