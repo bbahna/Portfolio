@@ -1,16 +1,13 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { projectProps } from '@/data/project';
+import NewMaker from '../common/NewMaker';
 
-interface IPostProps {
+interface BoxListProps {
 	post: projectProps;
 }
 
-const BoxList = ({ post }: IPostProps) => {
-	// New Date Label
-	const daySubtract = Math.abs(new Date().getTime() - new Date(post!.date).getTime());
-	const dayAgo = Math.floor(daySubtract / (1000 * 60 * 60 * 24));
-
+const BoxList = ({ post }: BoxListProps) => {
 	return (
 		<Link href={post.link ? post.link : `/posts/${post._raw?.flattenedPath}`} target={post.link && '_blank'}>
 			<div
@@ -22,11 +19,7 @@ const BoxList = ({ post }: IPostProps) => {
 					<div className="flex items-center mb-2">
 						<p className="px-3 py-1 text-[13px] rounded-2xl theme-bg-4 mr-2 theme-text-2">{post.category}</p>
 						<p className="text-sm font-light theme-text-2">{post.date}</p>
-						{dayAgo <= 30 && (
-							<span className="px-[6px] leading-[21px] ml-2 bottom-[6px] text-[9px] font-light rounded-md right-0 text-[#fefefe] theme-bg-main-dark">
-								New
-							</span>
-						)}
+						<NewMaker post={post} />
 					</div>
 					<h2 className="mb-2 leading-8 text-xl font-bold theme-text-2 relative ellipsis">
 						{post.title}

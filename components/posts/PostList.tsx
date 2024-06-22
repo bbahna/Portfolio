@@ -1,21 +1,18 @@
 import Image from 'next/image';
 import Link from 'next/link';
+import NewMaker from '../common/NewMaker';
 
-interface IPostProps {
+export interface postProps {
 	post: {
 		title: string;
 		description: string;
 		date: string;
-		thumbnail: string;
+		thumbnail?: string;
 	};
-	slug: string;
+	slug?: string;
 }
 
-const PostList = ({ post, slug }: IPostProps) => {
-	// New Date Label
-	const daySubtract = Math.abs(new Date().getTime() - new Date(post!.date).getTime());
-	const dayAgo = Math.floor(daySubtract / (1000 * 60 * 60 * 24));
-
+const PostList = ({ post, slug }: postProps) => {
 	return (
 		<Link href={`/posts/${slug}`} passHref className="w-full">
 			<div
@@ -25,11 +22,7 @@ const PostList = ({ post, slug }: IPostProps) => {
 			>
 				<h2 className="text-xl font-bold theme-text-2 duration-200 theme-text-hover relative">
 					{post.title}
-					{dayAgo <= 30 && (
-						<span className="absolute px-[6px] leading-[21px] ml-2 bottom-[6px] text-[9px] font-light rounded-md text-[#fefefe] theme-bg-main-dark">
-							New
-						</span>
-					)}
+					<NewMaker post={post} />
 				</h2>
 				<p className="my-2 text-[14px] font-normal theme-text-3 font-scdream">{post.description}</p>
 				<span className="block leading-[14px] text-[13px] font-normal theme-text-5">{post.date}</span>
