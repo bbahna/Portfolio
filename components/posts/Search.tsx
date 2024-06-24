@@ -1,12 +1,12 @@
 import { ChangeEventHandler, MouseEventHandler } from 'react';
 
-interface IPostProps {
+interface SearchProps {
 	click: boolean;
 	onClick: MouseEventHandler;
 	onChange: ChangeEventHandler;
 }
 
-const Search = ({ click, onClick, onChange }: IPostProps) => {
+const Search = ({ click, onClick, onChange }: SearchProps) => {
 	return (
 		<div
 			className={`relative flex flex-row items-center cursor-pointer max-md:mb-4 ${
