@@ -10,9 +10,9 @@ category: 'Git'
 
 `$ cd .ssh`
 
-`$ ssh-keygen -t rsa -C "[hyoon.dev@gmail.com](mailto:hyoon.dev@gmail.com)" -r "hyoon"`
+`$ ssh-keygen -t rsa -C "[{이메일 주소 1}](mailto:{이메일 주소 1})" -r "{이름 1}"`
 
-`$ ssh-keygen -t rsa -C "[lemontree6629@gmail.com](mailto:lemontree6629@gmail.com)" -r "linaoo7"`
+`$ ssh-keygen -t rsa -C "[{이메일 주소 2}](mailto:{이메일 주소 2})" -r "{이름 2}"`
 
 - 다음으로 SSH 키에 대한 비밀번호를 추가로 지정할지 물어봅니다. 패스워드를 설정해도 되고, 추가 패스워드 없이 사용하려면 엔터를 두 번 입력해줍니다.<br/>
   (추가 패스워드는 나중에 지정하는 것도 가능하지만, GitHub에서는 공식적으로 패스워드 설정을 권장하고 있습니다)
@@ -25,14 +25,14 @@ Enter same passphrase again:
 ## 2. ssh config 설정
 
 ```bash
-Host github.com-hyoon
+Host github.com-{이름 1}
         HostName github.com
-        User hyoon.dev@email.com
-        IdentityFile ~/.ssh/hyoon
-Host github.com-linaoo7
+        User {이메일 주소 1}
+        IdentityFile ~/.ssh/{이름 1}
+Host github.com-{이름 2}
         HostName github.com
-        User lemontree6629@email.com
-        IdentityFile ~/.ssh/linaoo7
+        User {이메일 주소 2}
+        IdentityFile ~/.ssh/{이름 2}
 ```
 
 ## 3. ssh agent 등록
@@ -40,11 +40,11 @@ Host github.com-linaoo7
 - 개인키 비밀번호 암호화하여 저장
 
 ```bash
-$ ssh-add hyoon
-Identity added: hyoon (hyoon.dev@email.com)
+$ ssh-add {이름 1}
+Identity added: {이름 1} ({이메일 주소 1})
 
-$ ssh-add linaoo7
-Identity added: linaoo7 (lemontree6629@email.com)
+$ ssh-add {이름 2}
+Identity added: {이름 2} ({이메일 주소 2})
 
 $ ssh-add -l
 ```
@@ -53,13 +53,13 @@ $ ssh-add -l
 
 ### 개인키 출력
 
-`$ cat hyoon.pub
- $ cat linaoo7.pub`
+`$ cat {이름 1}.pub
+ $ cat {이름 2}.pub`
 
 - [https://github.com/settings/keys](https://github.com/settings/keys) 등록설정
   ![add new key](</posts/git-ssh(1).png>)
-  ![ssh key (hyoon)](</posts/git-ssh(2).png>)
-  ![ssh key (linaoo7)](</posts/git-ssh(3).png>)
+  ![ssh key (이름 1)](</posts/git-ssh(2).png>)
+  ![ssh key (이름 2)](</posts/git-ssh(3).png>)
   1. **리포에 설정하기** : Project Repo → Settings → Deploy Keys → Add Deploy Key> `id_rsa.pub`의 내용 쓰기
   2. **계정에 설정하기** : 계정 → Settings → SSH and GPG keys → SSH Keys → New SSH Key 선택> `id_rsa.pub`의 내용 쓰기
 
